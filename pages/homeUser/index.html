@@ -4,10 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/globalStyles.css">
     <link rel="stylesheet" href="/pages/homeUser/script.css">
     <title>Home pets</title>
 </head>
 <body>
+    <main>
+        <header>
+            <div id="headerLogo">
+                <img src="/src/imgs/imgLogo.svg" alt="logo">
+                <h2 id="nameLogo">PetFinder</h1>
+            </div>
+            <div id="btnsUser">
+                <button id="perfil">Perfil</button>
+                <button id="logout">Logout</button>
+            </div>
+        </header>
+        <section id="sectionPetView">
+            <div id="adoptDescription">
+                <h1 id="adoptTitlte">Adote uma uma fofura</h1>
+                <img id="smile" src="/src/imgs/sentiment_satisfied.png" alt="sorriso">
+            </div>
+            <ul id="ulPets"></ul>
+        </section>
+    </main>
     <script type="module" src="/pages/homeUser/index.js"></script>
 </body>
 </html>

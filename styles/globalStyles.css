@@ -11,7 +11,8 @@
 :root {
     --yellow: #FED954;
     --green: #23C994;
-    --purple: #4E2096
+    --purple: #4E2096;
+    --white: rgba(255, 254, 251, 1);
 }
 
 /* body {
