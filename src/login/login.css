@@ -80,11 +80,15 @@ form input {
     padding-left: 15px;
 }
 
+form input:active{
+    border:#FED954
+}
+
 
 .button-send {
     position: relative;
     background-color: #23C994;
-    width: 260px;
+    width: 95%;
     height: 50px;
     border-radius: 10px;
     padding: 0.8rem 1.6rem;
