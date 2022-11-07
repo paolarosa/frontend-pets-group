@@ -1,27 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./login.css">
-    <link rel="stylesheet" href="/styles/globalStyles.css">
+    <link rel="stylesheet" href="./loginMedia.css">
+    <link rel="stylesheet" href="../../styles/globalStyles.css">
     <title>Login</title>
 </head>
+
 <body>
-    <img class="img-background"src="../../src/imgs/background10.jp.png">
+    <img class="img-background" src="../../src/imgs/background10.jp.png">
     <header>
-        <h2>Seja bem vindo ao Adopt-Pets!</h2>
+        <div class="div-logo">
+            <img src="../../src/imgs/imgLogo.svg">
+            <h1>PetFinder</h1>
+        </div>
+
+        <h2 class="welcome">Seja bem vindo a PetFinder!</h2>
+        <div>
+            <button class="button-home">Home</button>
+            <button class="button-register">Register</button>
+        </div>
+
     </header>
     <main>
-        
+        <img class="img-dog-login" src="../../src/imgs/Ellipse 5.png">
+        <img class="img-dog-paw" src="../../src/imgs/image 3 (1).png">
+        <img class="img-dog-paw2" src="../../src/imgs/image 3 (1).png">
+        <img class="img-dog-paw3" src="../../src/imgs/image 3 (1).png">
         <form class="form">
-            <label>Email</label>
+            <h3>Login</h3>
+            <label class="label-email">Email</label>
             <input type="text" placeholder="Digite seu email aqui">
-            <label>Senha</label>
+            <label class="label-senha">Senha</label>
             <input type="password" placeholder="Digite sua senha aqui">
-            <button class="button-send"type="submit">Login</button>
-            <a>Não tem uma conta? Clique aqui</a>
+            <button class="button-send" type="submit">Entrar</button>
+            <a>Não tem uma conta? Clique aqui!</a>
     </main>
 </body>
+
 </html>
