@@ -1,12 +1,29 @@
 <!DOCTYPE html>
-<html lang="ptgit commit -m "first commit"-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="./pages/home/style.css">
+    <link rel="stylesheet" href="./styles/coisasUsuais.css">
+    <link rel="stylesheet" href="./styles/globalStyle.css">
+    <title>PetFinder</title>
 </head>
-<body>
-    
+<body class="relative">
+    <img class="imgBackground absolute" src="./src/imgs/background.svg" alt="">
+    <header class="flex align justifyBet relative">
+        <div class="flex align gap12">
+            <img src="./src/imgs/imgLogo.svg" alt="">
+            <h1>PetFinder</h1>
+        </div>
+        <div class="IMGModal flex align">
+            <img src="./src/imgs/barrinha.svg" alt="">
+        </div>
+        <div class="modalLogin absolute hide">
+            <button class="butLogin">Login</button>
+            <button class="butRegister">Registrar</button>
+        </div>
+    </header>
+    <script type="module" src="./pages/home/script.js"></script>
 </body>
 </html>
