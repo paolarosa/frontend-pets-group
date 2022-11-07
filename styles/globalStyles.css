@@ -14,11 +14,11 @@
     --purple: #4E2096
 }
 
-body {
+/* body {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+} */
 
 body button {
     cursor: pointer;
