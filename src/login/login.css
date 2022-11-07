@@ -30,6 +30,7 @@ header {
     justify-content: center;
     border: 2px solid #FED954;
     font-family: 'Poor Story', cursive;
+    /* box-shadow: 3px -8px 0px #FFFFFF, 3px -8px 0px 2px #000000; */
 }
 
 header h2 {
@@ -98,7 +99,7 @@ form input:active{
 
 }
 
-form p {
+form a {
     font-size: 15px;
     text-align: center;
     margin-top: 10px;
