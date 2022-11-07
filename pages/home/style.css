@@ -12,7 +12,6 @@
         padding: 8px;
         font-family: 'Poppins', sans-serif;
         width: 100%;
-
     }
     
     .IMGModal {
@@ -75,14 +74,44 @@
         left: 150px;
         top: 125px;
     }
+
     .adopt {
         position: absolute;
-        top: 350px;
+        top: 330px;
         display: flex;
         align-items: center;
         flex-direction: column;
-        width: 70%;
+        width: 80%;
         left: 15%;
+        
+    }
+    .adopt h1 {
+        font-family: 'Poppins', sans-serif;
+    }
+    .adopt button {
+        background: #23C994;
+        border: 2px solid #000000;
+        border-radius: 10px;
+        width: 90%;
+        height: 2.5rem;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 16px;
+        margin-top: 25px;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        box-shadow: 5px 4px 0px #FFFFFF, 5px 4px 0px 2px #000000;
+    }
+    footer {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        top: 630px; 
+        height: 40px;
+        background: rgb(78, 32, 150);
+        color: white;
     }
 }
 
