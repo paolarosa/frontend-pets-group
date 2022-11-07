@@ -1,3 +1,10 @@
+main{
+    width: 100vw;
+    height: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+
 header{
     background-color: var(--purple);
     display: flex;
@@ -36,6 +43,10 @@ header{
     height: 40px;
     border-radius: 10px;
     font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }
 
 #logout{
@@ -46,6 +57,10 @@ header{
     height: 40px;
     border-radius: 10px;
     font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }
 
 #adoptDescription{
@@ -119,8 +134,74 @@ header{
     border-radius: 10px;
     width: 80px;
     height: 30px;
+    color: white;
+}
+
+footer{
+    background: #F1EEF7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    color: var(--purple);
 }
 
 @media(min-width:768px){
+    header{
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 200px;
+        align-items: center;
+        height: 80px;
+    }
 
+    #headerLogo{
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    #perfil{
+        width: 100px;
+        height: 40px;
+        border: 2px solid black;
+    }
+    
+    #logout{
+        width: 100px;
+        height: 40px;
+    }
+
+    #sectionPetView{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #adoptDescription{
+        display: flex;
+        gap: 25px;
+    }
+
+    #adoptTitlte{
+        font-size: 60px;
+    }
+
+    #smile{
+        width: 60px;
+        height: 60px;
+    }
+
+    #ulPets{
+        display: flex;
+        flex-wrap: wrap;
+        width: 40%;
+        justify-content: center;
+        align-items: center;
+        gap: 60px;
+    }
 }
