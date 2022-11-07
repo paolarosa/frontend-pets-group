@@ -30,7 +30,7 @@ header {
     justify-content: center;
     border: 2px solid #FED954 ;
     font-family: 'Poor Story', cursive;
-    /* box-shadow: 3px -5px 0px #FFFFFF, 3px -5px 0px 2px #000000 */
+    box-shadow: 3px -5px 0px #FFFFFF, 3px -5px 0px 2px #000000
 }
 
 header h2 {
