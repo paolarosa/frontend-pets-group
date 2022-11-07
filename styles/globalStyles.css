@@ -1,20 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
 
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Open Sans', sans-serif;
+
 }
 
 :root {
     --yellow: #FED954;
     --green: #23C994;
-    --purple: #4E2096 
+    --purple: #4E2096
 }
 
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+body button {
+    cursor: pointer;
+}
+
+body li {
+    list-style: none;
 }
