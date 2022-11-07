@@ -3,9 +3,6 @@
     font-family: 'DM Sans', sans-serif;
     font-family: 'Poppins', sans-serif; 
 */
-/* .imgBackground {
-    width: 100%;
-} */
 
 
 @media (max-width: 400px) {
@@ -15,6 +12,7 @@
         padding: 8px;
         font-family: 'Poppins', sans-serif;
         width: 100%;
+
     }
     
     .IMGModal {
@@ -28,17 +26,17 @@
     }
     
     .modalLogin {
-        top: 53px;
+        top: 3.2rem;
         left: 0;
         animation: 1s toast forwards;
         
-        padding: 0 8px;
+        padding: 0 0.5rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
         width: 100%;
         background-color: #4E2096;
-        height: 60px;
+        height: 4rem;
         display: flex;
         align-items: center;
     }
@@ -48,6 +46,8 @@
         border-radius: 10px;
         width: 49%;
         height: 70%;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 14px;
     }
     .butRegister {
         background: #4E2096;
@@ -56,6 +56,33 @@
         width: 49%;
         height: 70%;
         color: white;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 14px;
+    }
+    main {
+        margin-top: 75px;
+    }
+    .imgDog {
+        width: 200px;
+        position: absolute;
+        left: 30px;
+        top: 25px;
+
+    }
+    .imgCat {
+        width: 200px;
+        position: absolute;
+        left: 150px;
+        top: 125px;
+    }
+    .adopt {
+        position: absolute;
+        top: 350px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 70%;
+        left: 15%;
     }
 }
 
