@@ -1,0 +1,106 @@
+/* color:#4E2096
+color:#FED954
+color:#23C994 */
+
+@import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+header {
+    background-color: white;
+    position: relative;
+    top: 40px;
+    width: 80%;
+    height: 40px;
+    border-radius: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #FED954 ;
+    font-family: 'Poor Story', cursive;
+    /* box-shadow: 3px -5px 0px #FFFFFF, 3px -5px 0px 2px #000000 */
+}
+
+header h2 {
+    font-size: 18px;
+    z-index: 1;
+
+}
+
+.img-background {
+    object-fit: cover;
+    position: absolute;
+    z-index: 0;
+}
+
+main {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+form {
+    position: relative;
+    background-color: white;
+    top: 50px;
+    height: 330px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+    border: 2px solid #000000;
+    border-bottom-right-radius: 40px;
+    border-top-left-radius: 40px;
+    font-size: 18px;
+    font-family: 'Poor Story', cursive;
+    font-weight: 600;
+    box-shadow: 5px 8px 0px #FFFFFF, 5px 8px 0px 2px #000000;
+}
+
+form input {
+    border: none;
+    background-color: #fed95460;
+    height: 35px;
+    border-radius: 10px;
+    font-size: 13px;
+    padding-left: 15px;
+}
+
+form input:active{
+    border:#FED954
+}
+
+
+.button-send {
+    position: relative;
+    background-color: #23C994;
+    width: 95%;
+    height: 50px;
+    border-radius: 10px;
+    padding: 0.8rem 1.6rem;
+    box-shadow: 5px 8px 0px #FFFFFF, 5px 8px 0px 2px #000000;
+    font-family: 'Poor Story', cursive;
+    font-size: 20px;
+
+}
+
+form a {
+    font-size: 15px;
+    text-align: center;
+    margin-top: 10px;
+}
