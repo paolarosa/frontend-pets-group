@@ -36,7 +36,7 @@
         color: white
     }
 
-    header h2 {
+    .welcome {
         display: none;
     }
 
@@ -47,6 +47,7 @@
         border-radius: 10px;
         width: 126px;
         height: 50px;
+        cursor: pointer
     }
 
     .button-register {
@@ -56,6 +57,7 @@
         border-radius: 10px;
         width: 126px;
         height: 50px;
+        cursor: pointer
     }
 
     main {
@@ -93,17 +95,17 @@
 
     .label-email{
         position: absolute;
-        top: 85px;
+        top: 90px;
         left: 150px;
     }
     .label-senha{
         position: absolute;
-        top: 155px;
+        top: 175px;
         left: 150px;
     }
     form input {
         width: 50%;
-        margin-top: 15px;
+        margin-top: 20px;
         background: #F0F0F0
 
     }
@@ -111,6 +113,9 @@
         width: 235px;
         height: 34px;
         padding-top: 2px;
+        cursor: pointer;
+        color: white;
+        box-shadow: 3px 3px 0px #FFFFFF, 3px 3px 0px 2px #000000;
     }
 
     .img-dog-login{
