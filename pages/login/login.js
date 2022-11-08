@@ -12,3 +12,25 @@ function captureInputLogin(){
 }
 captureInputLogin()
 
+export function toast(actualResponse){
+    const divReturn = document.querySelector(".div-return")
+    const message = document.createElement("p")
+
+    if(actualResponse.message == "password is required"){
+        message.innerText = "Digite uma senha válida!"
+    }
+    if(actualResponse.message == "email is required"){
+        message.innerText = "Digite um e-mail válido!"
+    }
+    if(actualResponse.message == "please inform a valid email format"){
+        message.innerText = "Senha ou e-mail incorretos!"
+    }
+    divReturn.appendChild(message)
+    divReturn.classList.remove("hidden") 
+    /* if (actualResponse.message) {
+        message.innerText = actualResponse.message
+        divReturn.classList.add("div-erro")
+    }
+    divReturn.appendChild(message)
+    divReturn.classList.remove("hidden") */
+}
