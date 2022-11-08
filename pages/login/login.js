@@ -28,4 +28,11 @@ export function toast(actualResponse){
     divReturn.appendChild(message)
     divReturn.classList.remove("hidden") 
 
+
+    /* if (actualResponse.message) {
+        message.innerText = actualResponse.message
+        divReturn.classList.add("div-erro")
+    }
+    divReturn.appendChild(message)
+    divReturn.classList.remove("hidden") */
 }
