@@ -36,6 +36,10 @@ export function toastRegister(actualResponse){
         message.innerText = "Digite um e-mail válido!"
         divReturn.classList.add("fail") 
     }
+    if(actualResponse.message == 'Email already in use'){
+        message.innerText = "Email já existente!"
+        divReturn.classList.add("fail") 
+    }
     if(!actualResponse.message){
         message.innerText = "Conta criada com sucesso!"
         divReturn.classList.add("sucess") 
@@ -43,9 +47,4 @@ export function toastRegister(actualResponse){
     divReturn.appendChild(message)
     divReturn.classList.remove("hidden") 
 }
-
-
-
-
-
 
