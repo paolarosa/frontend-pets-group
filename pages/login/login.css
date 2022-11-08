@@ -43,10 +43,19 @@ body {
 
 @media (max-width: 530px) {
 	.login-container {
-		margin: 60px 0;
+		margin: 120px 0;
 	}
 	.login-container::before {
-		background: none;
+		content: "";
+		background: url(../../src/imgs/pawns.png) no-repeat center;
+		height: 150px;
+		width: 150px;
+		background-size: cover;
+		position: absolute;
+		top: -100px;
+		left: 50%;
+		z-index: -1;
+		transform: rotate(85deg);
 	}
 }
 
