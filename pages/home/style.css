@@ -4,6 +4,13 @@
     font-family: 'Poppins', sans-serif; 
 */
 
+body {
+    background-image: linear-gradient(
+                rgba(255, 255, 255, 0.8),
+                rgba(255, 255, 255, 0.8)
+            ),
+            url("../../src/imgs/background-paws.jpg");
+}
 
 @media (max-width: 700px) {
     
@@ -73,16 +80,18 @@
     }
     .imgDog {
         width: 200px;
+        height: 200px;
         position: absolute;
-        left: 30px;
-        top: 25px;
+        left: 15%;
+        top: 20px;
 
     }
     .imgCat {
         width: 200px;
+        height: 200px;
         position: absolute;
-        left: 150px;
-        top: 125px;
+        left: 45%;
+        top: 100px;
     }
 
     .adopt {
