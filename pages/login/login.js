@@ -1,7 +1,7 @@
 import { login } from "../../scripts/requestApi.js"
 
 async function captureInputLogin(){
-    const buttonAcess = document.querySelector(".button-send")
+    const buttonAcess = document.querySelector("form button")
     let inputEmail = document.getElementById("email")
     let inputPassword = document.getElementById("password")
 

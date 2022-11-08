@@ -44,8 +44,8 @@ body {
 .login-container::before {
 	content: "";
 	background: url(../../src/imgs/Ellipse\ 5.png) no-repeat center;
-	height: 520px;
-	width: 520px;
+	height: 420px;
+	width: 420px;
 	background-size: cover;
 	position: absolute;
 	left: -70%;
