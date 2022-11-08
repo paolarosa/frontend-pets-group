@@ -1,4 +1,4 @@
-import { toast } from "../pages/login/login.js"
+import { toastRegister } from "../pages/registro/registro.js"
 
 const baseUrl = "https://m2-api-adot-pet.herokuapp.com/"
 
@@ -31,13 +31,11 @@ async function login(email, password) {
     const responseJSON = await fetch('https://m2-api-adot-pet.herokuapp.com/session/login', options)
         .then((response) => response.json())
         .then((response) => {
-            console.log(response)
             if (!response.message) {
                 localStorage.setItem("@KenzieCompany", JSON.stringify(response.token))
                 window.location.replace("../homeUser/index.html")
             } else {
                 toast(response)
-                console.log(response)
                 setTimeout(() => {
                     window.location.reload()
                 }, 3000)
@@ -51,3 +49,37 @@ export {
     allPets,
     login
 }
+
+
+export async function register(name, email, password, avatar) {
+        const data = {
+            "name": name,
+            "email": email,
+            "password": password,
+            "avatar_url": avatar
+        }
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        }
+            const responseJSON = await fetch('https://m2-api-adot-pet.herokuapp.com/users', options)
+                .then((response) => response.json())
+                .then((response) => {
+                    console.log(response)
+                if (!response.message) {
+                    toastRegister(response)
+                        setTimeout(() => {
+                            window.location.replace("../login/login.html")
+                        }, 3000)
+                    } else {
+                        toastRegister(response)
+                        setTimeout(() => {
+                            window.location.reload()
+                        }, 2500)
+                    }
+               })      
+               return responseJSON   
+    }
