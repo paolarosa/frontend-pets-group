@@ -1,17 +1,19 @@
 header {
 	background-color: var(--purple);
+}
+
+header .container {
 	display: flex;
-	flex-wrap: wrap;
-	align-items: flex-start;
+	align-items: center;
 	justify-content: space-between;
-	flex-direction: column;
-	padding: 15px 80px;
-	gap: 20px;
+	gap: 20px 40px;
+	flex-wrap: wrap;
+	padding: 1rem;
 }
 
 #nameLogo {
 	color: var(--white);
-	font-size: 1.75rem;
+	font-size: 1.25rem;
 	display: flex;
 	align-items: center;
 }
@@ -25,45 +27,53 @@ header {
 	display: block;
 }
 
-.nav.active .btn-mobile {
-	border-top-color: transparent;
-	top: -8px;
-}
-
-.nav.active .btn-mobile::before {
-	transform: rotate(-135deg);
-	top: 7px;
-}
-.nav.active .btn-mobile::after {
-	transform: rotate(135deg);
+.menu {
+	display: flex;
+	align-items: center;
+	gap: 30px;
+	visibility: hidden;
+	height: 0px;
+	z-index: 1000;
+	position: absolute;
+	top: 60px;
+	right: 0px;
+	width: 100%;
+	height: 0px;
+	overflow-y: hidden;
+	background-color: var(--purple);
+	transition: 0.5s ease;
+	padding: 0 15px;
 }
 
 .nav.active .menu {
 	visibility: visible;
-	height: 60px;
-	margin-top: 30px;
-	opacity: 1;
+	padding: 40px 15px;
+	height: 40px;
 }
 
 .btn-mobile {
 	display: flex;
+	flex-direction: column;
+	align-items: center;
+	cursor: pointer;
+	width: 26px;
+	border: none;
+	background: none;
+	border-top: 2px solid white;
+	position: relative;
+	outline: none;
 }
 
-#perfil {
-	background-color: var(--green);
-	border: 1px solid black;
-	border-radius: 10px;
-	padding: 0.5rem 1.6rem;
-	color: white;
-}
-
-#logout {
-	color: var(--white);
-	background-color: var(--purple);
-	border: 1px solid var(--white);
-	border-radius: 10px;
-	padding: 0.5rem 1.6rem;
-	border-radius: 10px;
+.btn-mobile::before,
+.btn-mobile::after {
+	content: "";
+	display: inline-block;
+	width: 26px;
+	margin-top: 5px;
+	height: 2px;
+	background-color: #fff;
+	position: relative;
+	transition: 0.3s ease;
 }
 
 #sectionPetView {
@@ -175,6 +185,12 @@ header {
 	font-weight: 500;
 	align-self: flex-start;
 	color: white;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.btnAdopt:hover {
+	background-color: rgb(81, 156, 81);
 }
 
 footer {
@@ -188,25 +204,10 @@ footer {
 }
 
 @media (min-width: 768px) {
-	header {
+	header .container {
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
-	}
-
-	.menu {
-		display: flex;
-		align-items: center;
-		gap: 12px;
-		transition: 0.3s;
-	}
-
-	.menu {
-		visibility: hidden;
-		height: 0px;
-		opacity: 0;
-		z-index: 1000;
-		transition: 0.3s ease;
 	}
 
 	#sectionPetView {
@@ -250,28 +251,14 @@ footer {
 		gap: 40px;
 	}
 
-	.btn-mobile {
-		display: none;
-		flex-direction: column;
-		align-items: center;
-		cursor: pointer;
-		width: 26px;
-		border: none;
-		background: none;
-		border-top: 2px solid white;
-		position: relative;
-		outline: none;
+	.menu {
+		visibility: visible;
+		height: 60px;
+		opacity: 1;
+		position: sticky;
 	}
 
-	.btn-mobile::before,
-	.btn-mobile::after {
-		content: "";
-		display: inline-block;
-		width: 26px;
-		margin-top: 5px;
-		height: 2px;
-		background-color: #fff;
-		position: relative;
-		transition: 0.3s ease;
+	.btn-mobile {
+		display: none;
 	}
 }
