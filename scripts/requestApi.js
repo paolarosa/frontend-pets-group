@@ -15,3 +15,34 @@ async function allPets(){
 export{
     allPets
 }
+
+
+export async function login(email,password) {
+    const data = {
+        "email": email,
+        "password": password
+    }
+const options = {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data)
+}
+const responseJSON = await fetch('https://m2-api-adot-pet.herokuapp.com/session/login', options)
+    .then((response) => response.json())
+    .then((response) => { console.log(response)
+         if (!response.error) {
+            localStorage.setItem("@KenzieCompany", JSON.stringify(response.token))
+            window.location.replace("../homeUser/index.html")
+        } else {
+            console.log(response)
+            setTimeout(() => {
+                window.location.reload()
+            }, 3000)
+        } 
+    }
+    )
+    return responseJSON
+}
+
