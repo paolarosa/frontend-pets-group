@@ -12,20 +12,22 @@
 </head>
 
 <body>
-    <img class="img-background" src="../../src/imgs/background10.jp.png">
+  <!--   <img class="img-background-mobile" src="../../src/imgs/background10.jp.png"> -->
+    <img class="img-background" src="../../src/imgs/background-paws.jpg">
     <header>
         <div class="div-logo">
             <img src="../../src/imgs/imgLogo.svg">
             <h1>PetFinder</h1>
         </div>
-
-        <h2 class="welcome">Seja bem vindo a PetFinder!</h2>
-        <div>
-            <button class="button-home">Home</button>
-            <button class="button-register">Register</button>
+        <div class="buttons-header">
+            <a class="button-home" href="">Home</a>
+            <a class="button-register">Register</a>
         </div>
-
+        
     </header>
+    <div class="div-welcome">
+        <h3 class="welcome">Bem vindo ao PetFinder!</h3>
+        </div>
     <main>
         <img class="img-dog-login" src="../../src/imgs/Ellipse 5.png">
         <img class="img-dog-paw" src="../../src/imgs/image 3 (1).png">
@@ -34,12 +36,15 @@
         <form class="form">
             <h3>Login</h3>
             <label class="label-email">Email</label>
-            <input type="text" placeholder="Digite seu email aqui">
+            <input id="email"ype="text" placeholder="Digite seu email aqui">
             <label class="label-senha">Senha</label>
-            <input type="password" placeholder="Digite sua senha aqui">
+            <input id="password"type="password" placeholder="Digite sua senha aqui">
             <button class="button-send" type="submit">Entrar</button>
-            <a>Não tem uma conta? Clique aqui!</a>
+            <a>Não tem uma conta? <strong>Clique aqui!</strong></a>
+            </form>
+
     </main>
+    <script type="module" src="./login.js"></script>
 </body>
 
 </html>
