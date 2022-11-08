@@ -5,10 +5,12 @@ async function captureInputLogin(){
     let inputEmail = document.getElementById("email")
     let inputPassword = document.getElementById("password")
 
-    buttonAcess.addEventListener("click", async (event) => {
-        event.preventDefault()
-        await login(inputEmail.value,inputPassword.value)
-})
+    if(buttonAcess){
+        buttonAcess.addEventListener("click", async (event) => {
+            event.preventDefault()
+            await login(inputEmail.value,inputPassword.value)
+    })
+}
 }
 captureInputLogin()
 
@@ -27,12 +29,4 @@ export function toast(actualResponse){
     }
     divReturn.appendChild(message)
     divReturn.classList.remove("hidden") 
-
-
-    /* if (actualResponse.message) {
-        message.innerText = actualResponse.message
-        divReturn.classList.add("div-erro")
-    }
-    divReturn.appendChild(message)
-    divReturn.classList.remove("hidden") */
 }
