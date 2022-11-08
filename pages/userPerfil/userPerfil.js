@@ -55,8 +55,36 @@ async function renderProfileInfo(){
 
 async function renderMyPets(){
     const pets = await myPets()
+    const ul = document.querySelector("#petsList")
     pets.forEach((element) => {
-        console.log(element)
-        
+        const li = document.createElement("li")
+        const divListItem = document.createElement("div")
+        const imgPet = document.createElement("img")
+        const namePet = document.createElement("h3")
+        const bread = document.createElement("p")
+        const adopt = document.createElement("p")
+        const btnAdopt = document.createElement("button")
+
+        li.classList.add("pet-list")
+        divListItem.classList.add("item-image")
+        namePet.classList.add("item")
+        bread.classList.add("item")
+        adopt.classList.add("item")
+        btnAdopt.classList.add("btn","purple")
+
+        imgPet.src = element.avatar_url
+        namePet.innerText = element.name
+        bread.innerText = element.bread
+        if(element.available_for_adoption){
+            adopt.innerText = "Adotável: Sim"
+        }else{
+            adopt.innerText = "Adotável: Não"
+        }
+        btnAdopt.innerText = "Atualizar"
+
+        divListItem.append(imgPet)
+        li.append(divListItem,namePet,bread,adopt,btnAdopt)
+        ul.append(li)
+
     });
 }renderMyPets()
