@@ -30,13 +30,16 @@
         height: 40px;
         margin-top: 5px;
     }
+
     .div-logo img {
         width: 50px;
         margin-right: 10px;
     }
+
     .div-logo h1 {
         font-size: 30px;
     }
+
     header div h1 {
         color: white
     }
@@ -57,7 +60,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-  
+
     }
 
     .button-register {
@@ -142,7 +145,7 @@
 
     .img-dog-login {
         position: absolute;
-        left: 150px;
+        left: 10%;
         top: 70px;
         height: 800px;
     }
@@ -174,5 +177,54 @@
     .img-dog-paw3 {
         display: block;
     }
-    .div-welcome{display: none;}
+
+    .div-welcome {
+        display: none;
+    }
+
+    .div-return {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #FED954;
+        border-radius: 10px;
+        box-shadow: 8px 8px 0px #4E2096, 8px 8px 0px 2px #ffc800; 
+        height: 80px;
+        width: 300px;
+        font-size: 20px;
+        padding-left: 15px;
+        color: black;
+        ;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        animation: toast 10s ease-in forwards;
+
+    }
+
+     @keyframes toast {
+        0% {
+            right: 20px;
+            bottom: -100px
+        }
+
+        10% {
+            right: 20px;
+            bottom: 10px
+        }
+
+        90% {
+            right: 20px;
+            bottom: 10px
+        }
+
+        100% {
+            right: 20px;
+            bottom: -100px
+        }
+    } 
+
+    .hidden {
+        display: none;
+    }
 }
