@@ -1,4 +1,13 @@
 import { allPets } from "../../scripts/requestApi.js";
+import { verifyPermissionAdmin } from "../../scripts/verifyPermission.js";
+verifyPermissionAdmin()
+
+function removeLocalStorage(){
+	const btnLoggout = document.querySelector("#btnLoggout")
+	btnLoggout.addEventListener("click",()=>{
+		localStorage.removeItem("@KenzieCompany")
+	})
+}removeLocalStorage()
 
 async function renderAllpets() {
 	const ul = document.getElementById("ulPets");
