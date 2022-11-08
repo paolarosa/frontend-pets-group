@@ -14,12 +14,8 @@ async function allPets(){
     return response
 }
 
-export{
-    allPets
-}
 
-
-export async function login(email,password) {
+async function login(email,password) {
     const data = {
         "email": email,
         "password": password
@@ -31,21 +27,26 @@ const options = {
     },
     body: JSON.stringify(data)
 }
+
 const responseJSON = await fetch('https://m2-api-adot-pet.herokuapp.com/session/login', options)
-    .then((response) => response.json())
-    .then((response) => { console.log(response.message)
-         if (!response.message) {
-            localStorage.setItem("@KenzieCompany", JSON.stringify(response.token))
-            window.location.replace("../homeUser/index.html")
-        } else {
-            toast(response)
-            console.log(response)
-            setTimeout(() => {
-                window.location.reload()
-            }, 3000) 
-        }   
-    }
-    )
-    return responseJSON
+.then((response) => response.json())
+.then((response) => { console.log(response.message)
+    if (!response.message) {
+        localStorage.setItem("@KenzieCompany", JSON.stringify(response.token))
+        window.location.replace("../homeUser/index.html")
+    } else {
+        toast(response)
+        console.log(response)
+        setTimeout(() => {
+            window.location.reload()
+        }, 3000) 
+    }   
+}
+)
+return responseJSON
 }
 
+export{
+    allPets,
+    login
+}
