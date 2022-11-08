@@ -19,12 +19,51 @@
             <nav class="nav">
                 <button class="btn-mobile"></button>
                 <ul class="menu">
-                    <li><a class="btn green" href="/pages/userPerfil/index.html">Perfil</a></li>
-                    <li><a class="btn purple"" href=" /index.html">Logout</a></li>
+                    <li><a class="btn green" href="/pages/homeUser/index.html">Home</a></li>
+                    <li><a class="btn purple"" href=" ./index.html">Logout</a></li>
                 </ul>
             </nav>
         </div>
     </header>
+    <main>
+        <section class="profile-section">
+            <div class="hero-bg">
+                <div class="profile-image">
+                    <img src="../../src/imgs/michael-dam-mEZ3PoFGs_k-unsplash 1.jpg" alt="">
+                </div>
+            </div>
+            <div class="container">
+                <div class="profile-container">
+
+                    <h2>Fulaza de souza</h2>
+                    <p id="email"><span>Email:</span></p>
+                    <p id="birth"><span>Data de nascimento:</span>06/06/2003</p>
+                    <div class="profile-buttons">
+                        <button class="btn purple">Atualizar informações</button>
+                        <button class="btn alert">Deletar conta</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <section class="pets">
+                <button class="btn green">Cadastrar pet</button>
+
+                <ul id="petsList" class="pet-list">
+                    <li class="list-item">
+                        <div class="item-image">
+                            <img src="../../src/imgs/imgcat.svg" alt="">
+                        </div>
+                        <h3 class="item"><span>Nome:</span>Beto</h3>
+                        <p class="item"><span>Espécie:</span>Cachorro</p>
+                        <p class="item"><span>Adotável:</span>Sim</p>
+                        <button class="btn purple">Atualizar</button>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </main>
     <script type="module" src="/pages/userPerfil/userPerfil.js"></script>
     <script type="module" src="../../scripts/scripts.js"></script>
 </body>
