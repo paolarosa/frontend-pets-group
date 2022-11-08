@@ -90,7 +90,7 @@ body {
         width: 200px;
         height: 200px;
         position: absolute;
-        left: 45%;
+        left: 40%;
         top: 100px;
     }
 
@@ -107,9 +107,8 @@ body {
     .adopt h1 {
         font-family: 'Poppins', sans-serif;
     }
-    .adopt button {
+    .adopt a {
         background: #23C994;
-        border: 2px solid #000000;
         border-radius: 10px;
         width: 90%;
         height: 2.5rem;
@@ -127,7 +126,7 @@ body {
         justify-content: center;
         align-items: center;
         width: 100%;
-        top: 630px; 
+        bottom: 0;
         height: 40px;
         background: rgb(78, 32, 150);
         color: white;
