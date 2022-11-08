@@ -1,207 +1,277 @@
-main{
-    width: 100vw;
-    height: 100vw;
-    display: flex;
-    flex-direction: column;
+header {
+	background-color: var(--purple);
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: space-between;
+	flex-direction: column;
+	padding: 15px 80px;
+	gap: 20px;
 }
 
-header{
-    background-color: var(--purple);
-    display: flex;
-    align-items: baseline;
-    justify-content: space-evenly;
-    flex-direction: column;
-    padding: 15px;
-    gap: 5px;
+#nameLogo {
+	color: var(--white);
+	font-size: 1.75rem;
+	display: flex;
+	align-items: center;
 }
 
-#headerLogo{
-    display: flex;
-    gap: 5px;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
+#nameLogo::before {
+	content: "";
+	width: 30px;
+	margin-right: 10px;
+	height: 30px;
+	background: url(../../src/imgs/imgLogo.svg);
+	display: block;
 }
 
-#nameLogo{
-    color: var(--white);
-    font-size: 40px;
+.nav.active .btn-mobile {
+	border-top-color: transparent;
+	top: -8px;
 }
 
-#btnsUser{
-    display: flex;
-    gap: 15px;
-    align-items: center;
-    justify-content: center;
+.nav.active .btn-mobile::before {
+	transform: rotate(-135deg);
+	top: 7px;
+}
+.nav.active .btn-mobile::after {
+	transform: rotate(135deg);
 }
 
-#perfil{
-    color: var(--white);
-    background-color: var(--green);
-    border: 1px solid black;
-    width: 80px;
-    height: 40px;
-    border-radius: 10px;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
+.nav.active .menu {
+	visibility: visible;
+	height: 60px;
+	margin-top: 30px;
+	opacity: 1;
 }
 
-#logout{
-    color: var(--white);
-    background-color: var(--purple);
-    border: 1px solid var(--white);
-    width: 80px;
-    height: 40px;
-    border-radius: 10px;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
+.btn-mobile {
+	display: flex;
 }
 
-#adoptDescription{
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    gap: 10px;
+#perfil {
+	background-color: var(--green);
+	border: 1px solid black;
+	border-radius: 10px;
+	padding: 0.5rem 1.6rem;
+	color: white;
 }
 
-#adoptTitlte{
-    color: var(--purple);
-    font-size: 26px;
+#logout {
+	color: var(--white);
+	background-color: var(--purple);
+	border: 1px solid var(--white);
+	border-radius: 10px;
+	padding: 0.5rem 1.6rem;
+	border-radius: 10px;
 }
 
-#smile{
-    width: 40px;
-    height: 40px;
+#sectionPetView {
+	margin: 60px 0px 40px 0px;
+	z-index: 2000;
 }
 
-#ulPets{
-    display: flex;
-    overflow-x: scroll;
-    gap: 20px;
-    padding: 20px;
+#sectionPetView::after {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 180px;
+	background: url(../../src/imgs/pawns-group.svg) no-repeat center;
+	padding: 40px 0px;
 }
 
-.liPets{
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-    justify-content: baseline;
-    border: 1px solid black;
-    border-radius: 10px;
-    padding: 10px;
-    gap: 10px;
+#adoptTitle {
+	color: var(--purple);
+	font-size: 2rem;
+	flex-wrap: wrap;
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	font-weight: bold;
+	margin-bottom: 60px;
 }
 
-.imgPets{
-    width: 150px;
-    height: 100px;
-    border-radius: 10px;
+#ulPets {
+	display: flex;
+	overflow-x: scroll;
+	gap: 40px;
+	padding: 20px 0;
+	scroll-behavior: smooth;
 }
 
-.divPet{
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
+#ulPets::-webkit-scrollbar {
+	-webkit-appearance: none;
 }
 
-.namePets{
-    color: black;
-    font-size: 14px;
+.liPets {
+	min-width: 200px;
+	display: flex;
+	flex-direction: column;
+	border: 1px solid black;
+	border-radius: 10px;
+	padding: 8px;
+	gap: 10px;
+	box-shadow: 5px 8px 0px #fff, 5px 8px 0px 1px #000;
+	position: relative;
 }
 
-.race{
-    border: 1px solid black;
-    border-radius: 5px;
-    font-size: 10px;
-    padding: 5px;
-    background-color: white;
+.liPets:not(:last-child)::after {
+	content: "";
+	top: 50%;
+	z-index: 2000;
+	right: -60px;
+	position: absolute;
+	display: block;
+	width: 70px;
+	height: 10px;
+	background: url(../../src/imgs/detail.svg);
 }
 
-.species{
-    color: var(--purple);
+.liPets:nth-of-type(odd) {
+	background-color: #cceeff;
 }
 
-.btnAdopt{
-    background-color: var(--green);
-    border: 1px solid black;
-    border-radius: 10px;
-    width: 80px;
-    height: 30px;
-    color: white;
+.liPets:nth-of-type(even) {
+	background-color: #ffd951;
 }
 
-footer{
-    background: #F1EEF7;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 50px;
-    color: var(--purple);
+.imgPets {
+	height: 140px;
+	border-radius: 10px;
+	border: 1px solid black;
 }
 
-@media(min-width:768px){
-    header{
-        flex-direction: row;
-        justify-content: space-around;
-        gap: 200px;
-        align-items: center;
-        height: 80px;
-    }
+.divPet {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	justify-content: space-between;
+}
 
-    #headerLogo{
-        align-items: center;
-        justify-content: center;
-        margin-top: 20px;
-    }
+.namePets {
+	color: black;
+	font-size: 1.2rem;
+}
 
-    #perfil{
-        width: 100px;
-        height: 40px;
-        border: 2px solid black;
-    }
-    
-    #logout{
-        width: 100px;
-        height: 40px;
-    }
+.race {
+	border: 1px solid black;
+	border-radius: 5px;
+	font-size: 10px;
+	padding: 5px;
+	background-color: white;
+}
 
-    #sectionPetView{
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-    }
+.species {
+	color: var(--purple);
+	font-family: "DM Sans";
+	font-size: 12px;
+}
 
-    #adoptDescription{
-        display: flex;
-        gap: 25px;
-    }
+.btnAdopt {
+	background-color: var(--green);
+	border: 1px solid black;
+	border-radius: 10px;
+	padding: 0.4rem 0.5rem;
+	font-weight: 500;
+	align-self: flex-start;
+	color: white;
+}
 
-    #adoptTitlte{
-        font-size: 60px;
-    }
+footer {
+	background: #f1eef7;
+	text-align: center;
+	padding: 10px 0px;
+	color: var(--purple);
+	position: fixed;
+	bottom: 0;
+	width: 100vw;
+}
 
-    #smile{
-        width: 60px;
-        height: 60px;
-    }
+@media (min-width: 768px) {
+	header {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
 
-    #ulPets{
-        display: flex;
-        flex-wrap: wrap;
-        width: 40%;
-        justify-content: center;
-        align-items: center;
-        gap: 60px;
-    }
+	.menu {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		transition: 0.3s;
+	}
+
+	.menu {
+		visibility: hidden;
+		height: 0px;
+		opacity: 0;
+		z-index: 1000;
+		transition: 0.3s ease;
+	}
+
+	#sectionPetView {
+		z-index: 2000;
+	}
+
+	#sectionPetView::after {
+		content: "";
+		height: 180px;
+		width: 180px;
+		display: block;
+		top: 200px;
+		transform: rotate(85deg);
+		right: 200px;
+		position: absolute;
+		background: url(../../src/imgs/pawns.png) no-repeat center;
+		background-size: cover;
+		z-index: -200;
+	}
+
+	#sectionPetView::before {
+		content: "";
+		height: 180px;
+		width: 180px;
+		display: block;
+		bottom: 200px;
+		left: 80px;
+		position: absolute;
+		background: url(../../src/imgs/pawns.png) no-repeat center;
+		background-size: cover;
+		z-index: -200;
+	}
+
+	#adoptTitle {
+		font-size: 60px;
+	}
+
+	#ulPets {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 40px;
+	}
+
+	.btn-mobile {
+		display: none;
+		flex-direction: column;
+		align-items: center;
+		cursor: pointer;
+		width: 26px;
+		border: none;
+		background: none;
+		border-top: 2px solid white;
+		position: relative;
+		outline: none;
+	}
+
+	.btn-mobile::before,
+	.btn-mobile::after {
+		content: "";
+		display: inline-block;
+		width: 26px;
+		margin-top: 5px;
+		height: 2px;
+		background-color: #fff;
+		position: relative;
+		transition: 0.3s ease;
+	}
 }
