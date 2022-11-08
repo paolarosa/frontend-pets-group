@@ -1,196 +1,94 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
+	background-image: linear-gradient(
+			rgba(255, 255, 255, 0.8),
+			rgba(255, 255, 255, 0.8)
+		),
+		url("../../src/imgs/background-paws.jpg");
 }
 
-header {
-    width: 100vw;
-    background-color: #4E2096;
-    position: relative;
-    top: 0;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 10px;
-    padding: 0 10px;
-
+.login-container {
+	margin: 180px auto;
+	text-align: center;
+	position: relative;
+	background-color: white;
+	max-width: 520px;
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	gap: 15px;
+	border: 2px solid #000000;
+	border-bottom-right-radius: 40px;
+	border-top-left-radius: 40px;
+	font-size: 18px;
+	font-weight: 600;
+	box-shadow: 5px 8px 0px #4e2096, 5px 8px 0px 2px #4e2096;
 }
 
-.div-logo {
-    color: white;
-    display: flex;
-    font-size: 10px;
-
+.login-container h3 {
+	font-size: 2rem;
+	font-weight: bold;
 }
 
-.div-logo img {
-    width: 30px;
-    margin-right: 10px;
+.login-container::after {
+	content: "";
+	background: url(../../src/imgs/pawns.png) no-repeat center;
+	height: 250px;
+	width: 250px;
+	background-size: cover;
+	position: absolute;
+	right: -200px;
+	z-index: -1;
+	transform: rotate(80deg);
 }
 
-.div-logo h1 {
-    font-size: 20px;
+.login-container::before {
+	content: "";
+	background: url(../../src/imgs/Ellipse\ 5.png) no-repeat center;
+	height: 520px;
+	width: 520px;
+	background-size: cover;
+	position: absolute;
+	left: -70%;
+    top: -100px;
+	z-index: -1;
 }
-
-.buttons-header {
-    display: flex;
-}
-
-.button-home {
-    background: #23C994;
-    color: white;
-    border: 2px solid #000000;
-    border-radius: 10px;
-    width: 80px;
-    height: 40px;
-    margin-right: 5px;
-    cursor: pointer;
-    font-size: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-}
-
-.button-register {
-    background-color: #4E2096;
-    color: white;
-    border: 2px solid white;
-    border-radius: 10px;
-    width: 80px;
-    height: 40px;
-    cursor: pointer;
-    font-size: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-}
-
-.div-welcome {
-    display: block;
-    background-color: white;
-    position: relative;
-    top: 20px;
-    width: 85%;
-    height: 50px;
-    border-radius: 20%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid #4E2096;
-    border-top-right-radius: 600px;
-    border-top-left-radius: 600px;
-    box-shadow: 0px 4px 0px #4E2096, 0px 4px 0px 2px #4E2096;
-     /* box-shadow: 0px -4px 0px #4E2096, 0px -4px 0px 2px #4E2096;  */
-   
-}
-
-
-.welcome {
-    display: block;
-    font-size: 18px;
-    z-index: 1
-}
-
-/* header button{display: none;} */
-
-/* .img-background-mobile {
-    object-fit: cover;
-    position: absolute;
-    z-index: 0;
-    height: 100vh;
-    width: 100%;
-} */
-
-.img-background {
-    object-fit: cover;
-    position: absolute;
-    opacity: 30%;
-    z-index: 0;
-    height: 100vh;
-    width: 100%;
-
-}
-
-main {
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-image: none
-}
-
 
 form {
-    position: relative;
-    background-color: white;
-    top: 30px;
-    height: 360px;
-    width: 85%;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    gap: 15px;
-    border: 2px solid #000000;
-    border-bottom-right-radius: 40px;
-    /* border-top-left-radius: 40px; */
-    font-size: 18px;
-    font-weight: 600;
-    box-shadow: 5px 8px 0px #4E2096, 5px 8px 0px 2px #4E2096;
+	display: block;
+	width: 80%;
+	margin: 0 auto;
+}
+
+form label {
+	display: block;
+	text-align: left;
+	margin: 1.5rem 0 0.5rem 0;
+	font-size: 1rem;
+	font-weight: 500;
 }
 
 form input {
-    border: none;
-    background-color: rgba(128, 128, 128, 0.155);
-    height: 40px;
-    border-radius: 10px;
-    font-size: 13px;
-    padding-left: 15px;
+	width: 100%;
+	border: none;
+	background-color: rgba(128, 128, 128, 0.155);
+	height: 40px;
+	border-radius: 10px;
+	font-size: 14px;
+	padding-left: 15px;
 }
 
-
-.button-send {
-    position: relative;
-    background-color: #23C994;
-    width: 95%;
-    height: 50px;
-    border-radius: 10px;
-    padding: 0.5rem 1.6rem;
-    box-shadow: 5px 4px 0px #FFFFFF, 5px 4px 0px 2px #000000;
-    font-size: 20px;
-    
-
+form button {
+	margin-top: 20px;
+	width: 100%;
 }
 
-form a {
-    font-size: 12px;
-    text-align: center;
-    margin-top: 10px;
-    cursor: pointer
+.login-container a {
+	font-size: 12px;
+	text-align: center;
+	margin: 20px 0px;
+	cursor: pointer;
 }
 
-form a strong {
-    color: #23C994;
-}
-
-/* div {
-    display: none
-} */
-
-.img-dog-login,
-.img-dog-paw,
-.img-dog-paw2,
-.img-dog-paw3 {
-    display: none;
+.login-container a strong {
+	color: #23c994;
 }
