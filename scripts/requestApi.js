@@ -1,3 +1,5 @@
+import { toast } from "../pages/login/login.js"
+
 const baseUrl = "https://m2-api-adot-pet.herokuapp.com/"
 
 async function allPets(){
@@ -31,16 +33,17 @@ const options = {
 }
 const responseJSON = await fetch('https://m2-api-adot-pet.herokuapp.com/session/login', options)
     .then((response) => response.json())
-    .then((response) => { console.log(response)
-         if (!response.error) {
+    .then((response) => { console.log(response.message)
+         if (!response.message) {
             localStorage.setItem("@KenzieCompany", JSON.stringify(response.token))
             window.location.replace("../homeUser/index.html")
         } else {
+            toast(response)
             console.log(response)
             setTimeout(() => {
                 window.location.reload()
-            }, 3000)
-        } 
+            }, 3000) 
+        }   
     }
     )
     return responseJSON
