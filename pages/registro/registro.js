@@ -48,9 +48,3 @@ export function toastRegister(actualResponse){
     divReturn.classList.remove("hidden") 
 }
 
-
-
-
-
-
-
