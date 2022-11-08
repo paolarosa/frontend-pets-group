@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Poppins&display=swap');
 
-@media (min-width: 1000px) {
+@media (min-width: 700px) {
     .IMGModal {
         display: none;
     }
     body > img {
         width: 100%;
     }
+
     header {
         background-color: #4E2096;
         color: white;
@@ -22,6 +23,9 @@
         display: flex;
         align-items: center;
         gap: 16px;
+    }
+    .menu {
+        background: transparent;
     }
     
     .butLogin {
@@ -76,10 +80,16 @@
         box-shadow: 5px 4px 0px #FFFFFF, 5px 4px 0px 2px #000000;
     }
     .imgCat {
+        height: 350px;  
+        width: 350px;
         position: absolute;
         right:  150px;
+        top: 300px;
+        border-top-left-radius: 8px;
     }
     .imgDog {
+        height: 350px;  
+        width: 350px;
         position: absolute;
         right: 400px;
         top: 70px;
@@ -87,5 +97,20 @@
     .adopt button:hover{
         background: #0A9367;
         transition: 0.3s;
+    }
+    footer {
+        background-color: var(--purple);
+        display: flex ;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        color: white;
+        height: 50px; 
+        position: absolute;
+        bottom: 0;
+    }
+
+    .adopt a {
+        max-width: 20%;
     }
 }
