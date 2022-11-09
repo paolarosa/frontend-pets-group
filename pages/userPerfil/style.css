@@ -1,0 +1,84 @@
+.hero-bg {
+	background: url(../../src/imgs/bharathi-kannan-rfL-thiRzDs-unsplash.jpg)
+		no-repeat center;
+	height: 300px;
+	background-size: cover;
+}
+
+.profile-container {
+	max-width: 600px;
+	padding: 20px 60px;
+	margin: 0 auto;
+	background: url(../../src/imgs/image\ 2.svg);
+	background-color: #f5f5f5;
+	background-blend-mode: multiply;
+	border-radius: 40px;
+	margin-top: 110px;
+	border: 1px solid #000;
+	box-shadow: 4px 4px 0px #fff, 4px 4px 0px 1px #000;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.profile-image {
+	border-radius: 50%;
+	overflow: hidden;
+	width: 320px;
+	margin: 0 auto;
+	height: 320px;
+	transform: translateY(100px);
+
+	border: 6px solid var(--purple);
+}
+
+.profile-container h2 {
+	font-size: 2rem;
+	font-weight: 700;
+	margin-bottom: 16px;
+}
+
+.profile-container p {
+	font-size: 1rem;
+	font-weight: 700;
+	padding: 10px 20px;
+	border-radius: 5px;
+	background-color: #fff;
+	border: 1px solid #000;
+	box-shadow: 4px 4px 0px #fff, 4px 4px 0px 1px #000;
+	margin-bottom: 50px;
+}
+
+.profile-buttons {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+.pets {
+	margin: 80px 0;
+}
+
+.modal-container {
+	/* display: none; */
+	place-items: center;
+	background: rgba(70, 35, 167, 0.13);
+	height: 100vh;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 300;
+	position: fixed;
+}
+
+.modal {
+	min-width: 500px;
+	margin: 0 20px;
+	padding: 40px 26px;
+	background-color: var(--grey1);
+	animation: slide 0.3s ease;
+}
+
+.modal-container.active {
+	display: grid;
+}
