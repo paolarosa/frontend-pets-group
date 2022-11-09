@@ -70,6 +70,7 @@
 .list-item {
 	min-width: 200px;
 	display: grid;
+	flex: 1;
 	grid-template-columns: 1fr 1fr;
 	flex-direction: column;
 	border: 1px solid black;
@@ -94,6 +95,7 @@
 	border: 1px solid black;
 	grid-column: 1;
 	grid-row: 1 / -1;
+	height: 200px;
 }
 
 .item,
