@@ -87,11 +87,7 @@ async function renderProfileInfo() {
                 }
 
                 
-                if(response.message === 'please inform a valid image link'){
-                    message.innerText = 'Por favor insira um link de imagem valido'
-                }
-                divReturn.appendChild(message)
-                divReturn.classList.remove("hidden") 
+
 
             }
             catch (err) {
