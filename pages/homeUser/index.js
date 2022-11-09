@@ -2,12 +2,12 @@ import { adoptPet, allPets } from "../../scripts/requestApi.js";
 import { verifyPermissionAdmin } from "../../scripts/verifyPermission.js";
 verifyPermissionAdmin()
 
-function removeLocalStorage(){
+function removeLocalStorage() {
 	const btnLoggout = document.querySelector("#btnLoggout")
-	btnLoggout.addEventListener("click",()=>{
+	btnLoggout.addEventListener("click", () => {
 		localStorage.removeItem("@KenzieCompany")
 	})
-}removeLocalStorage()
+} removeLocalStorage()
 
 async function renderAllpets() {
 	const ul = document.getElementById("ulPets");
@@ -36,8 +36,8 @@ async function renderAllpets() {
 			petSpecies.innerText = element.species;
 			btn.innerText = "Me adota ?";
 
-			btn.addEventListener("click",()=>{
-				const adop = {pet_id:element.id}
+			btn.addEventListener("click", () => {
+				const adop = { pet_id: element.id }
 				adoptPet(adop)
 			})
 

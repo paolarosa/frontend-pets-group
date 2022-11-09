@@ -1,8 +1,6 @@
 body {
-	background-image: linear-gradient(
-			rgba(255, 255, 255, 0.8),
-			rgba(255, 255, 255, 0.8)
-		),
+	background-image: linear-gradient(rgba(255, 255, 255, 0.8),
+			rgba(255, 255, 255, 0.8)),
 		url("../../src/imgs/background-paws.jpg");
 }
 
@@ -45,6 +43,7 @@ body {
 	.login-container {
 		margin: 120px 0;
 	}
+
 	.login-container::before {
 		content: "";
 		background: url(../../src/imgs/pawns.png) no-repeat center;
@@ -105,7 +104,7 @@ form button {
 	justify-content: center;
 	background: #FED954;
 	border-radius: 10px;
-	box-shadow: 8px 8px 0px #4E2096, 8px 8px 0px 2px #ffc800; 
+	box-shadow: 8px 8px 0px #4E2096, 8px 8px 0px 2px #ffc800;
 	height: 80px;
 	width: 300px;
 	font-size: 20px;
@@ -119,7 +118,7 @@ form button {
 
 }
 
- @keyframes toast {
+@keyframes toast {
 	0% {
 		right: 20px;
 		bottom: -100px
@@ -139,7 +138,7 @@ form button {
 		right: 20px;
 		bottom: -100px
 	}
-} 
+}
 
 .hidden {
 	display: none;

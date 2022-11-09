@@ -1,20 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Poppins&display=swap');
-/*  
-    font-family: 'DM Sans', sans-serif;
-    font-family: 'Poppins', sans-serif; 
-*/
+
 
 body {
-    background-image: linear-gradient(
-                rgba(255, 255, 255, 0.8),
-                rgba(255, 255, 255, 0.8)
-            ),
-            url("../../src/imgs/background-paws.jpg");
+    background-image: linear-gradient(rgba(255, 255, 255, 0.8),
+            rgba(255, 255, 255, 0.8)),
+        url("../../src/imgs/background-paws.jpg");
 }
 
 @media (max-width: 700px) {
-    
-    html, body { 
+
+    html,
+    body {
         height: 100%;
         overflow: hidden
     }
@@ -30,22 +26,23 @@ body {
         font-family: 'Poppins', sans-serif;
         width: 100vw;
     }
-    
+
     .IMGModal {
         width: 34px;
         height: 34px;
     }
+
     .IMGModal img {
         width: 100%;
         background: transparent;
         color: white;
     }
-    
+
     .modalLogin {
         top: 3.2rem;
         left: 0;
         animation: 1s toast forwards;
-        
+
         padding: 0 0.5rem;
         display: flex;
         justify-content: space-between;
@@ -56,6 +53,7 @@ body {
         display: flex;
         align-items: center;
     }
+
     .butLogin {
         background: #23C994;
         border: 1px solid #000000;
@@ -65,6 +63,7 @@ body {
         font-family: 'DM Sans', sans-serif;
         font-size: 14px;
     }
+
     .butRegister {
         background: #4E2096;
         border: 1px solid #FFFFFF;
@@ -75,9 +74,11 @@ body {
         font-family: 'DM Sans', sans-serif;
         font-size: 14px;
     }
+
     main {
         margin-top: 75px;
     }
+
     .imgDog {
         width: 200px;
         height: 200px;
@@ -86,6 +87,7 @@ body {
         top: 20px;
 
     }
+
     .imgCat {
         width: 200px;
         height: 200px;
@@ -102,11 +104,13 @@ body {
         flex-direction: column;
         width: 80%;
         left: 15%;
-        
+
     }
+
     .adopt h1 {
         font-family: 'Poppins', sans-serif;
     }
+
     .adopt a {
         background: #23C994;
         border-radius: 10px;
@@ -120,6 +124,7 @@ body {
         left: 0;
         box-shadow: 5px 4px 0px #FFFFFF, 5px 4px 0px 2px #000000;
     }
+
     footer {
         position: absolute;
         display: flex;
@@ -134,6 +139,11 @@ body {
 }
 
 @keyframes toast {
-    0% {left: -400px;}
-    100% {left: 0px;}
+    0% {
+        left: -400px;
+    }
+
+    100% {
+        left: 0px;
+    }
 }

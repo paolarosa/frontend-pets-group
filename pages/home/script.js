@@ -1,4 +1,4 @@
-function butsHome () {
+function butsHome() {
     const butLogin = document.querySelectorAll('.butLogin')
     const butRegister = document.querySelectorAll('.butRegister')
 
@@ -10,7 +10,7 @@ function butsHome () {
 
     butRegister.forEach(element => {
         element.addEventListener('click', () => {
-            //window.location.replace('')
+            window.location.replace('')
         })
     })
 }
