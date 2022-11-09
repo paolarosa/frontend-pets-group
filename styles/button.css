@@ -29,3 +29,9 @@
 	background-color: var(--white);
 	color: var(--purple);
 }
+
+.btn.alert {
+	background-color: #fff;
+	border: 1px solid red;
+	color: red;
+}

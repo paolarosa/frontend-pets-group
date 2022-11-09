@@ -39,7 +39,7 @@ async function renderProfileInfo(){
 
     imgBg.src = user.avatar_url
     nameUser.innerText = user.name
-    email.innerText = user.email
+    email.innerHTML = `Email:${user.email}`
     btnUpdate.innerText = "Atualizar informações"
     btnDelete.innerText = "Deletar conta"
 

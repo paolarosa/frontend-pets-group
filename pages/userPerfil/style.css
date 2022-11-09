@@ -9,15 +9,16 @@
 	max-width: 600px;
 	padding: 20px 60px;
 	margin: 0 auto;
-	background: linear-gradient(
-			rgba(255, 255, 255, 0.9),
-			rgba(255, 255, 255, 0.9)
-		),
-		url(../../src/imgs/background-paws.jpg);
-	background-color: #fffefa;
-	background-blend-mode: difference;
+	background: url(../../src/imgs/image\ 2.svg);
+	background-color: #f5f5f5;
+	background-blend-mode: multiply;
 	border-radius: 40px;
-	margin-top: 125px;
+	margin-top: 110px;
+	border: 1px solid #000;
+	box-shadow: 4px 4px 0px #fff, 4px 4px 0px 1px #000;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .profile-image {
@@ -26,8 +27,33 @@
 	width: 320px;
 	margin: 0 auto;
 	height: 320px;
-  transform: translateY(100px);
+	transform: translateY(100px);
+	border: 6px solid var(--purple);
 }
 
 .profile-container h2 {
+	font-size: 2rem;
+	font-weight: 700;
+	margin-bottom: 16px;
+}
+
+.profile-container p {
+	font-size: 1rem;
+	font-weight: 700;
+	padding: 10px 20px;
+	border-radius: 5px;
+	background-color: #fff;
+	border: 1px solid #000;
+	box-shadow: 4px 4px 0px #fff, 4px 4px 0px 1px #000;
+	margin-bottom: 50px;
+}
+
+.profile-buttons {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+.pets {
+	margin: 80px 0;
 }
