@@ -1,6 +1,7 @@
 import { modal } from "../../scripts/modal.js";
 import { deleteProfile, myPets, renderMyProfile, requestUpdatePetInfo } from "../../scripts/requestApi.js";
 import { verifyPermissionAdmin } from "../../scripts/verifyPermission.js";
+import { getLocalStorage } from "../../scripts/getLS.js";
 
 verifyPermissionAdmin()
 
@@ -47,6 +48,57 @@ async function renderProfileInfo() {
 
     btnUpdate.addEventListener("click", () => {
         modal()
+        const updateForm = document.getElementById('updateForm')
+        const elements = [...updateForm.elements]
+        const divReturn = document.querySelector(".div-return")
+        const message = document.createElement("p")
+        
+        //console.log(elements)
+        
+
+        updateForm.addEventListener('submit', async (e) => {
+            e.preventDefault()
+
+            try {
+                const data = {}
+
+                elements.forEach(element => {
+                    if(element.tagName == "INPUT" && element.value !== ''){
+                        data[element.id] = element.value
+                    }
+                })
+                //console.log(data)
+
+                const options = {
+                    method: 'PATCH',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${getLocalStorage()}`
+                    },
+                    body: JSON.stringify(data)
+                }
+
+                const responseJSON = await fetch ('https://m2-api-adot-pet.herokuapp.com/users/profile', options)
+                const response = await responseJSON.json()
+                console.log(response)
+
+                if(!response.message){
+                    window.location.reload()
+                }
+
+                
+                if(response.message === 'please inform a valid image link'){
+                    message.innerText = 'Por favor insira um link de imagem valido'
+                }
+                divReturn.appendChild(message)
+                divReturn.classList.remove("hidden") 
+
+            }
+            catch (err) {
+                console.log(err)
+            }
+        })
+        
     })
 
     btnDelete.addEventListener("click", () => {

@@ -78,14 +78,12 @@
 
             <div class="modal-body">
                 <h3>Atualizar Perfil</h3>
-                <form>
+                <form id="updateForm">
                     <label for="name">Nome</label>
                     <input id="name" type="text">
-                    <label for="email">Email</label>
-                    <input id="email" type="text">
-                    <label for="avatar">Avatar</label>
-                    <input id="avatar" type="text">
-                    <button id="button-submit" class="btn green" type="submit">Cadastrar</button>
+                    <label for="avatar_url">Avatar</label>
+                    <input id="avatar_url" type="text">
+                    <button id="button-submit" class="btn green" type="submit">Atualizar</button>
                 </form>
             </div>
         </div>
@@ -104,6 +102,9 @@
             </div>
         </div>
     </div>
+
+    <div class="div-return hidden"></div>
+    
     <script type="module" src="/pages/userPerfil/userPerfil.js"></script>
     <script type="module" src="../../scripts/scripts.js"></script>
 </body>
