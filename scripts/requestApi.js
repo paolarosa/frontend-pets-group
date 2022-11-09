@@ -103,13 +103,16 @@ async function myPets() {
 
 async function deleteProfile() {
     const token = getLocalStorage()
-    await fetch(`${baseUrl}users/profile`, {
+    console.log(token)
+    const response = await fetch(`${baseUrl}users/profile`, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json",
             "Authorization": `Bearer ${token}`
         }
     })
+    console.log(response)
+    return response
 }
 
 async function requestUpdatePetInfo(body, petId) {

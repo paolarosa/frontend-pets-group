@@ -151,7 +151,7 @@ async function renderMyPets() {
 }
 renderMyPets();
 
-function deleteProfileUser() {
+async function deleteProfileUser() {
 	const btnNoDelete = document.querySelector("#noDelete");
 	const btnDelete = document.querySelector("#deleteAccount");
 
@@ -160,9 +160,9 @@ function deleteProfileUser() {
 		container.classList.remove("active");
 	});
 
-	btnDelete.addEventListener("click", () => {
-		deleteProfile();
-		window.location.replace("/index.html");
+	btnDelete.addEventListener("click", async () => {
+		await deleteProfile();
+		window.location.reload()
 	});
 }
 deleteProfileUser();
