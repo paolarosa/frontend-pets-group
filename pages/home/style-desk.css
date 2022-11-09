@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Poppins&display=swap');
+
+@media (min-width: 700px) {
+    .IMGModal {
+        display: none;
+    }
+
+    body>img {
+        width: 100%;
+    }
+
+    header {
+        background-color: #4E2096;
+        color: white;
+        padding: 16px 128px;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .buts {
+        justify-content: space-between;
+        align-items: center;
+        width: 20%;
+        background-color: #4E2096;
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .menu {
+        background: transparent;
+    }
+
+    .butLogin {
+        background: #23C994;
+        border: 1px solid #000000;
+        border-radius: 10px;
+        width: 49%;
+        height: 70%;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 14px;
+    }
+
+    .butRegister {
+        background: #4E2096;
+        border: 1px solid #FFFFFF;
+        border-radius: 10px;
+        width: 49%;
+        height: 70%;
+        color: white;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 14px;
+    }
+
+    main {
+        padding: 16px 128px;
+        display: flex;
+        align-items: center;
+        height: 40vw;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .divMain2 {
+        width: 60%;
+    }
+
+    .adopt {
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+    }
+
+    .adopt h1 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 70px;
+        width: 80%;
+    }
+
+    .adopt button {
+        width: 20%;
+        height: 50px;
+        background: #23C994;
+        border: 2px solid #000000;
+        border-radius: 10px;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 18px;
+        color: white;
+        box-shadow: 5px 4px 0px #FFFFFF, 5px 4px 0px 2px #000000;
+    }
+
+    .imgCat {
+        height: 350px;
+        width: 350px;
+        position: absolute;
+        right: 150px;
+        top: 300px;
+        border-top-left-radius: 8px;
+    }
+
+    .imgDog {
+        height: 350px;
+        width: 350px;
+        position: absolute;
+        right: 400px;
+        top: 70px;
+    }
+
+    .adopt button:hover {
+        background: #0A9367;
+        transition: 0.3s;
+    }
+
+    footer {
+        background-color: var(--purple);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        color: white;
+        height: 50px;
+        position: absolute;
+        bottom: 0;
+    }
+
+    .adopt a {
+        max-width: 20%;
+    }
+}

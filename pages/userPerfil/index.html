@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/globalStyles.css">
+    <link rel="stylesheet" href="/pages/userPerfil/style.css">
+    <link rel="stylesheet" href="../../styles/button.css">
+    <title>Perfil Pets</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <h2 id="nameLogo">PetFinder</h2>
+            <nav class="nav">
+                <button class="btn-mobile"></button>
+                <ul class="menu">
+                    <li><a class="btn green" href="/pages/homeUser/index.html">Home</a></li>
+                    <li><a id="removeLS" class="btn purple"" href=" ./index.html">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="profile-section">
+        </section>
+        <div class="container">
+            <section class="pets">
+                <button class="btn green" id="register-pet-button" data-modal="register-pet-modal">Cadastrar
+                    pet</button>
+                <ul id="petsList" class="pet-list">
+                </ul>
+            </section>
+        </div>
+
+    </main>
+
+    <div id="register-pet-modal" class="modal-container">
+        <div class="modal">
+            <div class="modal-header">
+                <button class="close">X</button>
+            </div>
+            <div class="modal-body">
+                <h3>Cadastrar pet</h3>
+                <form>
+                    <label for="name">Nome</label>
+                    <input id="name" type="text">
+                    <label for="bread">Raça</label>
+                    <input id="bread" type="text">
+                    <label for="avatar">Avatar</label>
+                    <input id="avatar_url" type="text">
+                    <select id="select-specie" name="select-especie">
+                        <option value="Cachorro">Cachorro</option>
+                        <option value="Gato">Gato</option>
+                        <option value="Aves">Aves</option>
+                        <option value="Repteis">Repteis</option>
+                        <option value="Outros">Outros</option>
+                    </select>
+                    <button id="button-submit-pet" class="btn green" type="submit">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="delete-modal" class="modal-container">
+        <div class="modal">
+            <div class="modal-header">
+                <button class="close">X</button>
+            </div>
+            <div class="modal-body">
+                <h3>Deseja mesmo deletar sua conta?</h3>
+                <button class="btn purple" id="noDelete">Não desejo deletar minha conta</button>
+                <button class="btn alert" id="deleteAccount">Quero deletar minha conta</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="update-modal" class="modal-container">
+        <div class="modal">
+            <div class="modal-header">
+                <button class="close green">X</button>
+            </div>
+
+            <div class="modal-body">
+                <h3>Atualizar Perfil</h3>
+                <form id="updateForm">
+                    <label for="name">Nome</label>
+                    <input id="name" type="text">
+                    <label for="avatar_url">Avatar</label>
+                    <input id="avatar_url" type="text">
+                    <button id="button-update" class="btn green" type="submit">Atualizar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="update-pet" class="modal-container">
+        <div class="modal">
+            <div class="modal-header">
+                <button class="close">X</button>
+            </div>
+            <div class="modal-body">
+                <h3>Atualizar Pet</h3>
+                <form>
+                    <label for="avatar">Avatar</label>
+                    <input id="inputPet" type="text">
+                    <button id="button-att" class="btn green" type="submit">Atualizar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="div-return hidden"></div>
+
+    <script type="module" src="/pages/userPerfil/userPerfil.js"></script>
+    <script type="module" src="../../scripts/scripts.js"></script>
+</body>
+
+</html>

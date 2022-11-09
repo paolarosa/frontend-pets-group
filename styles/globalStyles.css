@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans&family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	--yellow: #fed954;
+	--green: #23c994;
+	--purple: #4e2096;
+	--white: rgba(255, 254, 251, 1);
+}
+
+body {
+	font-family: "Inter", sans-serif;
+	background-color: var(--gray1);
+	color: var(--gray0);
+	min-height: 100vh;
+	-webkit-font-smoothing: antialiased;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	object-fit: cover;
+	height: 100%;
+	width: 100%;
+	pointer-events: none;
+}
+
+h1,
+h2,
+h3,
+p {
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+input,
+textarea {
+	font-family: inherit;
+}
+
+a {
+	text-decoration: none;
+	text-align: center;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 1rem;
+}
+
+header {
+	background-color: var(--purple);
+}
+
+header .container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px 40px;
+	flex-wrap: wrap;
+	padding: 1rem;
+}
+
+.menu {
+	display: flex;
+	align-items: center;
+	gap: 30px;
+	visibility: hidden;
+	height: 0px;
+	z-index: 1000;
+	position: absolute;
+	top: 60px;
+	right: 0px;
+	width: 100%;
+	height: 0px;
+	overflow-y: hidden;
+	background-color: var(--purple);
+	transition: 0.5s ease;
+	padding: 0 15px;
+}
+
+.nav.active .menu {
+	visibility: visible;
+	padding: 40px 15px;
+	height: 40px;
+}
+
+.btn-mobile {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	cursor: pointer;
+	width: 26px;
+	border: none;
+	background: none;
+	border-top: 2px solid white;
+	position: relative;
+	outline: none;
+}
+
+.btn-mobile::before,
+.btn-mobile::after {
+	content: "";
+	display: inline-block;
+	width: 26px;
+	margin-top: 5px;
+	height: 2px;
+	background-color: #fff;
+	position: relative;
+	transition: 0.3s ease;
+}
+
+#nameLogo {
+	color: var(--white);
+	font-size: 1.25rem;
+	display: flex;
+	align-items: center;
+}
+
+#nameLogo::before {
+	content: "";
+	width: 30px;
+	margin-right: 10px;
+	height: 30px;
+	background: url(../../src/imgs/imgLogo.svg);
+	display: block;
+}
+
+@media (min-width: 768px) {
+	header .container {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.menu {
+		visibility: visible;
+		height: 60px;
+		opacity: 1;
+		position: sticky;
+	}
+
+	.btn-mobile {
+		display: none;
+	}
+}

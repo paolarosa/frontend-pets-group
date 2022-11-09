@@ -1,0 +1,169 @@
+#sectionPetView {
+	margin: 60px 0px 40px 0px;
+	z-index: 2000;
+}
+
+#sectionPetView::after {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 180px;
+	background: url(../../src/imgs/pawns-group.svg) no-repeat center;
+	padding: 40px 0px;
+}
+
+#adoptTitle {
+	color: var(--purple);
+	font-size: 2rem;
+	flex-wrap: wrap;
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	font-weight: bold;
+	margin-bottom: 60px;
+}
+
+#ulPets {
+	display: flex;
+	overflow-x: scroll;
+	gap: 40px;
+	padding: 20px 0;
+	scroll-behavior: smooth;
+}
+
+#ulPets::-webkit-scrollbar {
+	-webkit-appearance: none;
+}
+
+.liPets {
+	min-width: 200px;
+	display: flex;
+	flex-direction: column;
+	border: 1px solid black;
+	border-radius: 10px;
+	padding: 8px;
+	gap: 10px;
+	box-shadow: 5px 8px 0px #fff, 5px 8px 0px 1px #000;
+	position: relative;
+}
+
+.liPets:not(:last-child)::after {
+	content: "";
+	top: 50%;
+	z-index: 2000;
+	right: -60px;
+	position: absolute;
+	display: block;
+	width: 70px;
+	height: 10px;
+	background: url(../../src/imgs/detail.svg);
+}
+
+.liPets:nth-of-type(odd) {
+	background-color: #cceeff;
+}
+
+.liPets:nth-of-type(even) {
+	background-color: #ffd951;
+}
+
+.imgPets {
+	height: 140px;
+	border-radius: 10px;
+	border: 1px solid black;
+}
+
+.divPet {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	justify-content: space-between;
+}
+
+.namePets {
+	color: black;
+	font-size: 1.2rem;
+}
+
+.race {
+	border: 1px solid black;
+	border-radius: 5px;
+	font-size: 10px;
+	padding: 5px;
+	background-color: white;
+}
+
+.species {
+	color: var(--purple);
+	font-family: "DM Sans";
+	font-size: 12px;
+}
+
+.btnAdopt {
+	background-color: var(--green);
+	border: 1px solid black;
+	border-radius: 10px;
+	padding: 0.4rem 0.5rem;
+	font-weight: 500;
+	align-self: flex-start;
+	color: white;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.btnAdopt:hover {
+	background-color: rgb(81, 156, 81);
+}
+
+footer {
+	background: #f1eef7;
+	text-align: center;
+	padding: 10px 0px;
+	color: var(--purple);
+	position: fixed;
+	bottom: 0;
+	width: 100vw;
+}
+
+@media (min-width: 768px) {
+	#sectionPetView {
+		z-index: 2000;
+	}
+
+	#sectionPetView::after {
+		content: "";
+		height: 180px;
+		width: 180px;
+		display: block;
+		top: 200px;
+		transform: rotate(85deg);
+		right: 200px;
+		position: absolute;
+		background: url(../../src/imgs/pawns.png) no-repeat center;
+		background-size: cover;
+		z-index: -200;
+	}
+
+	#sectionPetView::before {
+		content: "";
+		height: 180px;
+		width: 180px;
+		display: block;
+		bottom: 200px;
+		left: 80px;
+		position: absolute;
+		background: url(../../src/imgs/pawns.png) no-repeat center;
+		background-size: cover;
+		z-index: -200;
+	}
+
+	#adoptTitle {
+		font-size: 60px;
+	}
+
+	#ulPets {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 40px;
+	}
+}

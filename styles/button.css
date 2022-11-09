@@ -1,0 +1,44 @@
+.btn {
+	display: block;
+	cursor: pointer;
+	font-size: 1.3rem;
+	font-weight: 500;
+	transition: 0.3s;
+	padding: 0.5rem 2rem;
+	border-radius: 10px;
+	border: 1px solid black;
+}
+
+.btn.green {
+	background-color: var(--green);
+	color: white;
+	box-shadow: 4px 4px 0px #fff, 4px 4px 0px 1px #000;
+}
+
+.btn.green:hover {
+	background-color: rgb(102, 196, 102);
+}
+
+.btn.purple {
+	background-color: var(--purple);
+	color: white;
+	border-color: white;
+}
+
+.btn.purple:hover {
+	background-color: var(--white);
+	color: var(--purple);
+	border-color: var(--purple);
+}
+
+.btn.alert {
+	background-color: #fff;
+	border: 1px solid red;
+	color: red;
+}
+
+.btn.alert:hover {
+	background-color: red;
+	border: 1px solid #fff;
+	color: #fff;
+}
