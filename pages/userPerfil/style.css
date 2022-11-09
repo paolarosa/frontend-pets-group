@@ -81,7 +81,6 @@
 	position: relative;
 }
 
-
 .list-item:nth-of-type(odd) {
 	background-color: #cceeff;
 }
@@ -115,7 +114,7 @@
 }
 
 .info > * {
-	font-size: .75rem;
+	font-size: 0.75rem;
 	font-weight: 700;
 	padding: 5px;
 	border-radius: 5px;
@@ -207,7 +206,8 @@
 	color: #000;
 }
 
-.modal-body form input, select {
+.modal-body form input,
+select {
 	width: 100%;
 	border: none;
 	background-color: rgba(128, 128, 128, 0.155);
