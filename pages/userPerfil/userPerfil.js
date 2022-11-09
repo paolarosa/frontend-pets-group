@@ -152,8 +152,8 @@ async function captureInputRegisterPet() {
     buttonRegister.addEventListener("click", async (event) => {
         event.preventDefault()
         
-        await registerPet(inputName.value , inputBread.value, selectSpecie.value, inputAvatar.value )
-        /* window.location.reload() */
+        await registerPet(inputName.value , inputBread.value, selectSpecie.value, inputAvatar.value)
+        window.location.reload() 
     })
 }
 captureInputRegisterPet()
