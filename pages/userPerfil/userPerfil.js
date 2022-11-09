@@ -140,11 +140,11 @@ async function updatePetInfo() {
 } updatePetInfo()
 
 async function captureInputRegisterPet() {
-    const buttonRegister = document.querySelector("#button-submit-pet")
-    let inputName = document.getElementById("name")
-    let inputBread = document.getElementById("bread")
-    let selectSpecie = document.getElementById("select-specie")
-    let inputAvatar = document.getElementById("avatar_url")
+    const buttonRegister = document.getElementById("button-submit-pet")
+    const inputName = document.getElementById("name")
+    const inputBread = document.getElementById("bread")
+    const selectSpecie = document.getElementById("select-specie")
+    const inputAvatar = document.getElementById("avatar_url")
     console.log(inputName.value)
     console.log(inputBread.value)
     console.log(selectSpecie.value)
@@ -152,8 +152,8 @@ async function captureInputRegisterPet() {
     buttonRegister.addEventListener("click", async (event) => {
         event.preventDefault()
         
-        await registerPet(inputName.value, inputBread.value, selectSpecie.value, inputAvatar.value)
-        window.location.reload()
+        await registerPet(inputName.value , inputBread.value, selectSpecie.value, inputAvatar.value )
+        /* window.location.reload() */
     })
 }
 captureInputRegisterPet()
