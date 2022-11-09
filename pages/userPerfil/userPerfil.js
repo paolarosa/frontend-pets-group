@@ -145,10 +145,6 @@ async function captureInputRegisterPet() {
     const inputBread = document.getElementById("bread")
     const selectSpecie = document.getElementById("select-specie")
     const inputAvatar = document.getElementById("avatar_url")
-    console.log(inputName.value)
-    console.log(inputBread.value)
-    console.log(selectSpecie.value)
-    console.log(inputAvatar.value)
     buttonRegister.addEventListener("click", async (event) => {
         event.preventDefault()
         
