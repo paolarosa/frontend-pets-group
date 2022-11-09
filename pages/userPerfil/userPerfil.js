@@ -52,13 +52,8 @@ async function renderProfileInfo() {
         const elements = [...updateForm.elements]
         const divReturn = document.querySelector(".div-return")
         const message = document.createElement("p")
-        
-        //console.log(elements)
-        
-
         updateForm.addEventListener('submit', async (e) => {
             e.preventDefault()
-
             try {
                 const data = {}
 
@@ -67,8 +62,6 @@ async function renderProfileInfo() {
                         data[element.id] = element.value
                     }
                 })
-                //console.log(data)
-
                 const options = {
                     method: 'PATCH',
                     headers: {
@@ -85,10 +78,6 @@ async function renderProfileInfo() {
                 if(!response.message){
                     window.location.reload()
                 }
-
-                
-
-
             }
             catch (err) {
                 console.log(err)
