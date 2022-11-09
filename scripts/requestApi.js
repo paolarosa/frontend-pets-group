@@ -132,6 +132,24 @@ async function requestUpdatePetInfo(body,petId){
     }
 }
 
+async function adoptPet(body){
+    const token = getLocalStorage()
+    try{
+        const request = await fetch(`${baseUrl}adoptions`,{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json",
+                "Authorization": `Bearer ${token}`
+            },
+            body:JSON.stringify(body)
+        })
+        const response = await request.json()
+        return response
+    }catch(error){
+        console.log(error)
+    }
+}
+
 export {
     allPets,
     login,
@@ -139,5 +157,6 @@ export {
     renderMyProfile,
     myPets,
     deleteProfile,
-    requestUpdatePetInfo
+    requestUpdatePetInfo,
+    adoptPet
 }
