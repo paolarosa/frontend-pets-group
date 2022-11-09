@@ -32,7 +32,7 @@ async function renderMyPets() {
 
 		li.classList.add("list-item");
 		divListItem.classList.add("item-image");
-		info.classList.add("info")
+		info.classList.add("info");
 		namePet.classList.add("item");
 		bread.classList.add("item");
 		adopt.classList.add("item");
