@@ -142,7 +142,7 @@
 	color: #000;
 }
 
-.modal-body form input {
+.modal-body form input, select {
 	width: 100%;
 	border: none;
 	background-color: rgba(128, 128, 128, 0.155);

@@ -151,6 +151,11 @@ async function adoptPet(body){
 }
 
 async function registerPet(name, bread, specie, avatar) {
+    console.log(name)
+    console.log(bread)
+    console.log(specie)
+    console.log(avatar)
+
     const token = getLocalStorage()
     const data = {
         "name": name,

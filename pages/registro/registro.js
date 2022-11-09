@@ -14,7 +14,7 @@ async function captureInputRegister(){
     })
 }
 }
-captureInputRegister()
+captureInputRegister() 
 
 export function toastRegister(actualResponse){
     const divReturn = document.querySelector(".div-return-register")

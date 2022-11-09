@@ -1,5 +1,5 @@
 import { modal } from "../../scripts/modal.js";
-import { deleteProfile, myPets, renderMyProfile, requestUpdatePetInfo } from "../../scripts/requestApi.js";
+import { deleteProfile, myPets, registerPet, renderMyProfile, requestUpdatePetInfo } from "../../scripts/requestApi.js";
 import { verifyPermissionAdmin } from "../../scripts/verifyPermission.js";
 
 verifyPermissionAdmin()
@@ -36,7 +36,7 @@ async function renderProfileInfo() {
     btnDelete.classList.add("btn", "alert")
     btnDelete.id = "deleteAccount"
 
- 
+
     imgBg.src = user.avatar_url
     nameUser.innerText = user.name
     email.innerText = user.email
@@ -132,9 +132,9 @@ async function updatePetInfo() {
                 bread: element.bread,
                 species: element.species,
                 avatar_url: input.value
-            } 
-            await requestUpdatePetInfo(edit,element.id)
-            window.location.replace("/pages/userPerfil/index.html")  
+            }
+            await requestUpdatePetInfo(edit, element.id)
+            window.location.replace("/pages/userPerfil/index.html")
         })
     });
 } updatePetInfo()
@@ -145,9 +145,13 @@ async function captureInputRegisterPet() {
     let inputBread = document.getElementById("bread")
     let selectSpecie = document.getElementById("select-specie")
     let inputAvatar = document.getElementById("avatar_url")
+    console.log(inputName.value)
+    console.log(inputBread.value)
+    console.log(selectSpecie.value)
+    console.log(inputAvatar.value)
     buttonRegister.addEventListener("click", async (event) => {
         event.preventDefault()
-        console.log(selectSpecie.value)
+        
         await registerPet(inputName.value, inputBread.value, selectSpecie.value, inputAvatar.value)
         window.location.reload()
     })
