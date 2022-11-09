@@ -15,7 +15,6 @@
     <header class="header">
         <div class="container">
             <h2 id="nameLogo">PetFinder</h2>
-
             <nav class="nav">
                 <button class="btn-mobile"></button>
                 <ul class="menu">
@@ -36,6 +35,31 @@
             </section>
         </div>
     </main>
+    <div id="delete-modal" class="modal-container">
+        <div class="modal">
+            <div>
+                <button class="close green">X</button>
+            </div>
+            <div>
+                <h3>Deseja mesmo deletar sua conta?</h3>
+                <button id="noDelete">Não desejo deletar minha conta</button>
+                <button id="deleteAccount">Quero deletar minha conta</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="updatePetInfo-modal" class="modal-container">
+        <div class="modal">
+            <div>
+                <button class="close green">X</button>
+            </div>
+            <div>
+                <h3>Atualizar pet</h3>
+                <input type="image">
+                <button type="submit">Atualizar</button>
+            </div>
+        </div>
+    </div>
     <script type="module" src="/pages/userPerfil/userPerfil.js"></script>
     <script type="module" src="../../scripts/scripts.js"></script>
 </body>

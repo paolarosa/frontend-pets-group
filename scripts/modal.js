@@ -1,4 +1,6 @@
-export default function modal() {
+const body = document.querySelector("body")
+
+function modal() {
 	const modalButtons = document.querySelectorAll("[data-modal]");
 
 	modalButtons.forEach((btn) => {
@@ -35,3 +37,31 @@ export default function modal() {
 	}
 }
 modal();
+
+async function openModal(children){
+    const backgroundContainer = document.createElement("section")
+    backgroundContainer.classList.add("modalBackground")
+    const mainContainer = document.createElement("section")
+    mainContainer.classList.add("modalContainer")
+    const closeModalButton = document.createElement("button")
+    closeModalButton.classList.add("modalClose")
+
+    closeModalButton.innerText = "X"
+
+    backgroundContainer.addEventListener("click",(event)=>{
+        const {className} = event.target
+        if(className === "modalBackground" || className === "modalClose"){
+            backgroundContainer.remove()
+        }
+    })
+
+    mainContainer.appendChild(closeModalButton)
+    mainContainer.append(children)
+    backgroundContainer.appendChild(mainContainer)
+    body.appendChild(backgroundContainer)
+}
+
+export{
+	modal,
+	openModal
+}
