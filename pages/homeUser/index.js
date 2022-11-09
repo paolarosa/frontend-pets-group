@@ -1,4 +1,4 @@
-import { allPets } from "../../scripts/requestApi.js";
+import { adoptPet, allPets } from "../../scripts/requestApi.js";
 import { verifyPermissionAdmin } from "../../scripts/verifyPermission.js";
 verifyPermissionAdmin()
 
@@ -35,6 +35,11 @@ async function renderAllpets() {
 			petRace.innerText = `Raça: ${element.bread}`;
 			petSpecies.innerText = element.species;
 			btn.innerText = "Me adota ?";
+
+			btn.addEventListener("click",()=>{
+				const adop = {pet_id:element.id}
+				adoptPet(adop)
+			})
 
 			divPet.append(namePet, petRace);
 			li.append(imgPet, divPet, petSpecies, btn);
