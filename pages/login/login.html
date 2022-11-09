@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./login.css">
+    <link rel="stylesheet" href="../../styles/button.css">
+    <link rel="stylesheet" href="../../styles/globalStyles.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <h2 id="nameLogo">PetFinder</h2>
+            <nav class="nav">
+                <button class="btn-mobile"></button>
+                <ul class="menu">
+                    <li><a class="btn green" href="../../index.html">Home</a></li>
+                    <li><a class="btn purple" href=" ../registro/registro.html">Registrar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="login-container">
+                <h3>Login</h3>
+                <form class="form" id="login">
+                    <label for="email">Email</label>
+                    <input id="email" type="text" placeholder="Digite seu email aqui">
+                    <label for="password">Senha</label>
+                    <input id="password" type="password" placeholder="Digite sua senha aqui">
+                    <button class="btn green" type="submit">Entrar</button>
+                </form>
+                <a href="../registro/registro.html">Não tem uma conta? <strong>Clique aqui!</strong></a>
+            </div>
+        </div>
+    </main>
+    <div class="div-return hidden"></div>
+    <script type="module" src="./login.js"></script>
+    <script type="module" src="../../scripts/scripts.js"></script>
+</body>
+
+</html>
