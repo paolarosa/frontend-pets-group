@@ -36,7 +36,7 @@ async function renderProfileInfo() {
     btnDelete.classList.add("btn", "alert")
     btnDelete.id = "deleteAccount"
 
-
+ 
     imgBg.src = user.avatar_url
     nameUser.innerText = user.name
     email.innerText = user.email
@@ -92,7 +92,7 @@ async function renderMyPets() {
         }
         btnAdopt.innerText = "Atualizar"
 
-        btnAdopt.setAttribute("data-modal", "updatePetInfo-modal")
+        btnAdopt.setAttribute("data-modal", "update-pet")
 
         btnAdopt.addEventListener("click", () => {
             modal()
@@ -123,19 +123,18 @@ function deleteProfileUser() {
 
 async function updatePetInfo() {
     const pets = await myPets()
-    const form = document.querySelector("#formPet")
-    const input = document.querySelector("#avatar_url")
+    const btn = document.querySelector("#button-att")
+    const input = document.querySelector("#inputPet")
     pets.forEach((element) => {
-        form.addEventListener("submit", async (event) => {
-            event.preventDefault()
+        btn.addEventListener("click", async (event) => {
             const edit = {
-                "name": element.name,
-                "bread": element.bread,
-                "species": element.species,
-                "avatar_url": input.value
+                name: element.name,
+                bread: element.bread,
+                species: element.species,
+                avatar_url: input.value
             } 
             await requestUpdatePetInfo(edit,element.id)
-            console.log(element)
+            window.location.replace("/pages/userPerfil/index.html")  
         })
     });
 } updatePetInfo()
