@@ -114,11 +114,30 @@ async function deleteProfile(){
     })
 }
 
+async function requestUpdatePetInfo(body,petId){
+    const token = getLocalStorage()
+    try{
+        const request = await fetch(`${baseUrl}pets/${petId}`,{
+            method:"PATCH",
+            headers:{
+                "Content-Type":"application/json",
+                "Authorization": `Bearer ${token}`
+            },
+            body:JSON.stringify(body)
+        })
+        const response = await request.json()
+        return response
+    }catch(error){
+        console.log(error)
+    }
+}
+
 export {
     allPets,
     login,
     register,
     renderMyProfile,
     myPets,
-    deleteProfile
+    deleteProfile,
+    requestUpdatePetInfo
 }

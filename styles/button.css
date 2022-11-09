@@ -28,10 +28,17 @@
 .btn.purple:hover {
 	background-color: var(--white);
 	color: var(--purple);
+	border-color: var(--purple);
 }
 
 .btn.alert {
 	background-color: #fff;
 	border: 1px solid red;
 	color: red;
+}
+
+.btn.alert:hover {
+	background-color: red;
+	border: 1px solid #fff;
+	color: #fff;
 }
