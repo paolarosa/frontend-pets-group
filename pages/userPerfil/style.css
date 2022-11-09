@@ -188,7 +188,8 @@
 }
 
 .modal .btn {
-	width: 70%;
+	width: 100%;
+	margin-top: 20px;
 }
 
 .modal-body form {
@@ -206,6 +207,10 @@
 	color: #000;
 }
 
+.modal-body select {
+	margin: 1.5rem 0;
+}
+
 .modal-body form input,
 select {
 	width: 100%;
@@ -215,9 +220,4 @@ select {
 	border-radius: 10px;
 	font-size: 14px;
 	padding-left: 15px;
-}
-
-#button-submit {
-	margin-top: 20px;
-	width: 100%;
 }

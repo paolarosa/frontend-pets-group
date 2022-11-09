@@ -51,13 +51,6 @@ async function renderProfileInfo() {
 	btnUpdate.setAttribute("data-modal", "update-modal");
 	btnDelete.setAttribute("data-modal", "delete-modal");
 
-	btnUpdate.addEventListener("click", () => {
-		modal();
-	});
-
-	btnDelete.addEventListener("click", () => {
-		modal();
-	});
 
 	divProfileImg.append(imgBg);
 	divHeroBg.append(divProfileImg);
@@ -65,6 +58,8 @@ async function renderProfileInfo() {
 	divProfileContainer.append(nameUser, email, divProfileBtns);
 	divContainer.append(divProfileContainer);
 	sectionProfile.append(divHeroBg, divContainer);
+
+	modal()
 }
 renderProfileInfo();
 
@@ -90,8 +85,8 @@ async function renderMyPets() {
 		btnAdopt.classList.add("btn", "purple", "att");
 
 		imgPet.src = element.avatar_url;
-		namePet.innerText = element.name;
-		bread.innerText = element.bread;
+		namePet.innerText = `Nome: ${element.name}`;
+		bread.innerText = `Espécie: ${element.bread}`;
 		if (element.available_for_adoption) {
 			adopt.innerText = "Adotável: Sim";
 		} else {
@@ -101,14 +96,12 @@ async function renderMyPets() {
 
 		btnAdopt.setAttribute("data-modal", "update-pet");
 
-		btnAdopt.addEventListener("click", () => {
-			modal();
-		});
-
 		divListItem.append(imgPet);
 		info.append(namePet, bread, adopt, btnAdopt);
 		li.append(divListItem, info);
 		ul.append(li);
+
+		modal()
 	});
 }
 renderMyPets();
