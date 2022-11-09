@@ -53,49 +53,49 @@ async function renderProfileInfo() {
 	btnDelete.setAttribute("data-modal", "delete-modal");
 
 	btnUpdate.addEventListener("click", () => {
-		modal()
-		const updateForm = document.getElementById('updateForm')
-		const elements = [...updateForm.elements]
-		const divReturn = document.querySelector(".div-return")
-		const message = document.createElement("p")
-		updateForm.addEventListener('submit', async (e) => {
-			e.preventDefault()
+		modal();
+		const updateForm = document.getElementById("updateForm");
+		const elements = [...updateForm.elements];
+		const divReturn = document.querySelector(".div-return");
+		const message = document.createElement("p");
+		updateForm.addEventListener("submit", async (e) => {
+			e.preventDefault();
 			try {
-				const data = {}
+				const data = {};
 
-				elements.forEach(element => {
-					if (element.tagName == "INPUT" && element.value !== '') {
-						data[element.id] = element.value
+				elements.forEach((element) => {
+					if (element.tagName == "INPUT" && element.value !== "") {
+						data[element.id] = element.value;
 					}
-				})
+				});
 				const options = {
-					method: 'PATCH',
+					method: "PATCH",
 					headers: {
-						'Content-Type': 'application/json',
-						'Authorization': `Bearer ${getLocalStorage()}`
+						"Content-Type": "application/json",
+						Authorization: `Bearer ${getLocalStorage()}`,
 					},
-					body: JSON.stringify(data)
-				}
+					body: JSON.stringify(data),
+				};
 
-				const responseJSON = await fetch('https://m2-api-adot-pet.herokuapp.com/users/profile', options)
-				const response = await responseJSON.json()
-
+				const responseJSON = await fetch(
+					"https://m2-api-adot-pet.herokuapp.com/users/profile",
+					options
+				);
+				const response = await responseJSON.json();
 
 				if (!response.message) {
-					window.location.reload()
+					window.location.reload();
 				}
-				if (response.message === 'please inform a valid image link') {
-					message.innerText = 'Por favor insira um link de imagem valido'
-					divReturn.classList.remove("hidden")
-					divReturn.appendChild(message)
+				if (response.message === "please inform a valid image link") {
+					message.innerText = "Por favor insira um link de imagem valido";
+					divReturn.classList.remove("hidden");
+					divReturn.appendChild(message);
 				}
+			} catch (err) {
+				console.log(err);
 			}
-			catch (err) {
-				console.log(err)
-			}
-		})
-
-	})
+		});
+	});
 
 	divProfileImg.append(imgBg);
 	divHeroBg.append(divProfileImg);
@@ -104,12 +104,13 @@ async function renderProfileInfo() {
 	divContainer.append(divProfileContainer);
 	sectionProfile.append(divHeroBg, divContainer);
 
-	modal()
+	modal();
 }
 renderProfileInfo();
 
 async function renderMyPets() {
 	const pets = await myPets();
+
 	const ul = document.querySelector("#petsList");
 	pets.forEach((element) => {
 		const li = document.createElement("li");
@@ -122,6 +123,7 @@ async function renderMyPets() {
 		const btnAdopt = document.createElement("button");
 
 		li.classList.add("list-item");
+		li.id = element.id;
 		divListItem.classList.add("item-image");
 		info.classList.add("info");
 		namePet.classList.add("item");
@@ -146,7 +148,8 @@ async function renderMyPets() {
 		li.append(divListItem, info);
 		ul.append(li);
 
-		modal()
+		modal();
+		updatePetInfo();
 	});
 }
 renderMyPets();
@@ -168,23 +171,31 @@ function deleteProfileUser() {
 deleteProfileUser();
 
 async function updatePetInfo() {
-	const pets = await myPets();
-	const btn = document.querySelector("#button-att");
-	const input = document.querySelector("#inputPet");
-	pets.forEach((element) => {
+	const petsButton = document.querySelectorAll(".list-item button");
+	const form = document.getElementById("update-pet-form");
+	const input = form.querySelectorAll("input");
+
+	petsButton.forEach((btn) => {
 		btn.addEventListener("click", async (event) => {
-			const edit = {
-				name: element.name,
-				bread: element.bread,
-				species: element.species,
-				avatar_url: input.value,
-			};
-			await requestUpdatePetInfo(edit, element.id);
-			window.location.replace("/pages/userPerfil/index.html");
+			const id = event.target.parentElement.parentElement.id;
+
+			const data = {};
+			const formElements = [...input];
+
+			async function handleSubmit(event) {
+				formElements.forEach((item) => {
+					data[item.id] = item.value;
+				});
+
+				event.preventDefault();
+				await requestUpdatePetInfo(data, id);
+				window.location.replace("/pages/userPerfil/index.html");
+			}
+
+			form.addEventListener("submit", handleSubmit);
 		});
 	});
 }
-updatePetInfo();
 
 async function captureInputRegisterPet() {
 	const buttonRegister = document.getElementById("button-submit-pet");
