@@ -191,7 +191,6 @@ async function updatePetInfo() {
 				await requestUpdatePetInfo(data, id);
 				window.location.replace("/pages/userPerfil/index.html");
 			}
-
 			form.addEventListener("submit", handleSubmit);
 		});
 	});
