@@ -165,7 +165,7 @@ async function deleteProfileUser() {
 
 	btnDelete.addEventListener("click", async () => {
 		await deleteProfile();
-		window.location.reload()
+		window.location.reload();
 	});
 }
 deleteProfileUser();
@@ -174,13 +174,14 @@ async function updatePetInfo() {
 	const petsButton = document.querySelectorAll(".list-item button");
 	const form = document.getElementById("update-pet-form");
 	const input = form.querySelectorAll("input");
+	const select = form.querySelector("select");
 
 	petsButton.forEach((btn) => {
 		btn.addEventListener("click", async (event) => {
 			const id = event.target.parentElement.parentElement.id;
 
 			const data = {};
-			const formElements = [...input];
+			const formElements = [...input, select];
 
 			async function handleSubmit(event) {
 				formElements.forEach((item) => {
