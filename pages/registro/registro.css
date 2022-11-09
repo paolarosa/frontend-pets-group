@@ -1,0 +1,151 @@
+body {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.8),
+            rgba(255, 255, 255, 0.8)),
+        url("../../src/imgs/background-paws.jpg");
+}
+
+.registro-container {
+    margin: 240px auto 40px auto;
+    text-align: center;
+    position: relative;
+    background-color: white;
+    max-width: 520px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+    border: 2px solid #000000;
+    border-bottom-right-radius: 40px;
+    border-top-left-radius: 40px;
+    font-size: 18px;
+    font-weight: 600;
+    box-shadow: 5px 8px 0px #4E2096, 5px 8px 0px 2px #4E2096;
+}
+
+.registro-container h3 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.registro-container::before {
+    content: "";
+    background: url(../../src/imgs/big-cat.jpg) no-repeat center;
+    height: 250px;
+    width: 250px;
+    background-size: cover;
+    position: absolute;
+    top: -200px;
+    left: 25%;
+    z-index: -1;
+}
+
+@media (max-width: 530px) {
+    .registro-container {
+        margin: 120px 0;
+    }
+
+    .registro-container::before {
+        content: "";
+        background: url(../../src/imgs/pawns.png) no-repeat center;
+        height: 150px;
+        width: 150px;
+        background-size: cover;
+        position: absolute;
+        top: -100px;
+        left: 50%;
+        z-index: -1;
+        transform: rotate(85deg);
+    }
+}
+
+form {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+}
+
+form label {
+    display: block;
+    text-align: left;
+    margin: 1.5rem 0 0.5rem 0;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+form input {
+    width: 100%;
+    border: none;
+    background-color: rgba(128, 128, 128, 0.155);
+    height: 40px;
+    border-radius: 10px;
+    font-size: 14px;
+    padding-left: 15px;
+}
+
+form button {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.registro-container a {
+    font-size: 12px;
+    text-align: center;
+    margin: 20px 0px;
+    cursor: pointer;
+}
+
+.registro-container a strong {
+    color: #23C994;
+}
+
+.div-return-register {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 8px 8px 0px #4E2096, 8px 8px 0px 2px #FFC800;
+    height: 80px;
+    width: 300px;
+    font-size: 20px;
+    padding-left: 15px;
+    color: black;
+    ;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    animation: toast 10s ease-in forwards;
+}
+
+.fail {
+    background: #FED954
+}
+
+.sucess {
+    background-color: #23C994;
+}
+
+@keyframes toast {
+    0% {
+        right: 20px;
+        bottom: -100px
+    }
+
+    10% {
+        right: 20px;
+        bottom: 10px
+    }
+
+    90% {
+        right: 20px;
+        bottom: 10px
+    }
+
+    100% {
+        right: 20px;
+        bottom: -100px
+    }
+}
+
+.hidden {
+    display: none;
+}
