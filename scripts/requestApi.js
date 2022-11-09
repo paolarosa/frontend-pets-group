@@ -15,8 +15,6 @@ async function allPets() {
     return response
 }
 
-
-
 async function login(email, password) {
     const data = {
         "email": email,
@@ -79,73 +77,73 @@ async function register(name, email, password, avatar) {
     return responseJSON
 }
 
-async function renderMyProfile(){
+async function renderMyProfile() {
     const token = getLocalStorage()
-    const request = await fetch(`${baseUrl}users/profile`,{
-        headers:{
-            "Content-Type":"application/json",
-            "Authorization": `Bearer ${token}`            
+    const request = await fetch(`${baseUrl}users/profile`, {
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
         }
     })
     const response = await request.json()
     return response
 }
 
-async function myPets(){
+async function myPets() {
     const token = getLocalStorage()
-    const request = await fetch(`${baseUrl}pets/my_pets`,{
-        headers:{
-            "Content-Type":"application/json",
-            "Authorization": `Bearer ${token}`            
+    const request = await fetch(`${baseUrl}pets/my_pets`, {
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
         }
     })
     const response = await request.json()
     return response
 }
 
-async function deleteProfile(){
+async function deleteProfile() {
     const token = getLocalStorage()
-    await fetch(`${baseUrl}users/profile`,{
-        method:"DELETE",
-        headers:{
+    await fetch(`${baseUrl}users/profile`, {
+        method: "DELETE",
+        headers: {
             "Content-Type": "application/json",
             "Authorization": `Bearer ${token}`
         }
     })
 }
 
-async function requestUpdatePetInfo(body,petId){
+async function requestUpdatePetInfo(body, petId) {
     const token = getLocalStorage()
-    try{
-        const request = await fetch(`${baseUrl}pets/${petId}`,{
-            method:"PATCH",
-            headers:{
-                "Content-Type":"application/json",
+    try {
+        const request = await fetch(`${baseUrl}pets/${petId}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
                 "Authorization": `Bearer ${token}`
             },
-            body:JSON.stringify(body)
+            body: JSON.stringify(body)
         })
         const response = await request.json()
         return response
-    }catch(error){
+    } catch (error) {
         console.log(error)
     }
 }
 
-async function adoptPet(body){
+async function adoptPet(body) {
     const token = getLocalStorage()
-    try{
-        const request = await fetch(`${baseUrl}adoptions`,{
-            method:"POST",
-            headers:{
-                "Content-Type":"application/json",
+    try {
+        const request = await fetch(`${baseUrl}adoptions`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
                 "Authorization": `Bearer ${token}`
             },
-            body:JSON.stringify(body)
+            body: JSON.stringify(body)
         })
         const response = await request.json()
         return response
-    }catch(error){
+    } catch (error) {
         console.log(error)
     }
 }
@@ -178,6 +176,7 @@ async function registerPet(name, bread, specie, avatar) {
         })
     return responseJSON
 }
+
 export {
     allPets,
     login,

@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans&family=Poppins:wght@400;500;600;700&display=swap");
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -142,6 +143,7 @@ header .container {
 		justify-content: space-between;
 		align-items: center;
 	}
+
 	.menu {
 		visibility: visible;
 		height: 60px;
