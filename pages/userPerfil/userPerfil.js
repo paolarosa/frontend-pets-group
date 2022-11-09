@@ -1,4 +1,5 @@
-import { myPets, renderMyProfile } from "../../scripts/requestApi.js";
+import { modal } from "../../scripts/modal.js";
+import { deleteProfile, myPets, renderMyProfile } from "../../scripts/requestApi.js";
 import { verifyPermissionAdmin } from "../../scripts/verifyPermission.js";
 
 verifyPermissionAdmin()
@@ -24,7 +25,6 @@ async function renderProfileInfo(){
     const btnUpdate = document.createElement("button")
     const btnDelete = document.createElement("button")
 
-
     divHeroBg.classList.add("hero-bg")
     divProfileImg.classList.add("profile-image")
     divContainer.classList.add("container")
@@ -42,7 +42,16 @@ async function renderProfileInfo(){
     email.innerText = user.email
     btnUpdate.innerText = "Atualizar informações"
     btnDelete.innerText = "Deletar conta"
+    btnUpdate.setAttribute("data-modal","update-modal")
+    btnDelete.setAttribute("data-modal","delete-modal")
 
+    btnUpdate.addEventListener("click",()=>{
+        modal()
+    })
+
+    btnDelete.addEventListener("click",()=>{
+       modal()
+    })
 
     divProfileImg.append(imgBg)
     divHeroBg.append(divProfileImg)
@@ -81,6 +90,10 @@ async function renderMyPets(){
             adopt.innerText = "Adotável: Não"
         }
         btnAdopt.innerText = "Atualizar"
+        btnAdopt.setAttribute("data-modal","updatePetInfo-modal")
+        btnAdopt.addEventListener("click",()=>{
+           modal()
+        })
 
         divListItem.append(imgPet)
         li.append(divListItem,namePet,bread,adopt,btnAdopt)
@@ -88,3 +101,23 @@ async function renderMyPets(){
 
     });
 }renderMyPets()
+
+function deleteProfileUser(){
+    const btnNoDelete = document.querySelector("#noDelete")
+    const btnDelete = document.querySelector("#deleteAccount")
+
+    btnNoDelete.addEventListener("click",()=>{
+        const container = document.querySelector("#delete-modal")
+        container.classList.remove("active")
+    })
+
+    btnDelete.addEventListener('click',()=>{
+        deleteProfile()
+        window.location.replace("/index.html")
+    })
+
+}deleteProfileUser()
+
+function updatePetInfo(){
+
+}

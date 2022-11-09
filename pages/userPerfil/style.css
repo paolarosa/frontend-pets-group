@@ -1,6 +1,5 @@
 .hero-bg {
-	background: url(../../src/imgs/bharathi-kannan-rfL-thiRzDs-unsplash.jpg)
-		no-repeat center;
+	background: url(../../src/imgs/bharathi-kannan-rfL-thiRzDs-unsplash.jpg) no-repeat center;
 	height: 300px;
 	background-size: cover;
 }
@@ -9,10 +8,8 @@
 	max-width: 600px;
 	padding: 20px 60px;
 	margin: 0 auto;
-	background: linear-gradient(
-			rgba(255, 255, 255, 0.9),
-			rgba(255, 255, 255, 0.9)
-		),
+	background: linear-gradient(rgba(255, 255, 255, 0.9),
+			rgba(255, 255, 255, 0.9)),
 		url(../../src/imgs/background-paws.jpg);
 	background-color: #fffefa;
 	background-blend-mode: difference;
@@ -26,8 +23,31 @@
 	width: 320px;
 	margin: 0 auto;
 	height: 320px;
-  transform: translateY(100px);
+	transform: translateY(100px);
 }
 
-.profile-container h2 {
+.profile-container h2 {}
+
+.modal-container {
+	display: none;
+	place-items: center;
+	background: rgba(70, 35, 167, 0.13);
+	height: 100vh;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 300;
+	position: fixed;
+}
+
+.modal {
+	min-width: 500px;
+	margin: 0 20px;
+	padding: 40px 26px;
+	background-color: var(--grey1);
+	animation: slide 0.3s ease;
+}
+
+.modal-container.active {
+	display: grid;
 }

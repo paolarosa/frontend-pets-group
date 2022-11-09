@@ -103,10 +103,22 @@ async function myPets(){
     return response
 }
 
+async function deleteProfile(){
+    const token = getLocalStorage()
+    await fetch(`${baseUrl}users/profile`,{
+        method:"DELETE",
+        headers:{
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
+        }
+    })
+}
+
 export {
     allPets,
     login,
     register,
     renderMyProfile,
-    myPets
+    myPets,
+    deleteProfile
 }
