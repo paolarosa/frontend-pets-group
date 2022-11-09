@@ -103,7 +103,6 @@ async function myPets() {
 
 async function deleteProfile() {
     const token = getLocalStorage()
-    console.log(token)
     const response = await fetch(`${baseUrl}users/profile`, {
         method: "DELETE",
         headers: {
