@@ -120,7 +120,7 @@ async function requestUpdatePetInfo(body,petId){
         const request = await fetch(`${baseUrl}pets/${petId}`,{
             method:"PATCH",
             headers:{
-                "Content-Type":"aaplication/json",
+                "Content-Type":"application/json",
                 "Authorization": `Bearer ${token}`
             },
             body:JSON.stringify(body)
