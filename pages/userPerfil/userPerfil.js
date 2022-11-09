@@ -62,7 +62,6 @@ async function renderProfileInfo() {
 			e.preventDefault();
 			try {
 				const data = {};
-
 				elements.forEach((element) => {
 					if (element.tagName == "INPUT" && element.value !== "") {
 						data[element.id] = element.value;
