@@ -23,22 +23,24 @@ async function renderMyPets() {
 	pets.forEach((element) => {
 		const li = document.createElement("li");
 		const divListItem = document.createElement("div");
+		const info = document.createElement("div");
 		const imgPet = document.createElement("img");
 		const namePet = document.createElement("h3");
 		const bread = document.createElement("p");
 		const adopt = document.createElement("p");
 		const btnAdopt = document.createElement("button");
 
-		li.classList.add("pet-list");
+		li.classList.add("list-item");
 		divListItem.classList.add("item-image");
+		info.classList.add("info")
 		namePet.classList.add("item");
 		bread.classList.add("item");
 		adopt.classList.add("item");
 		btnAdopt.classList.add("btn", "purple", "att");
 
 		imgPet.src = element.avatar_url;
-		namePet.innerText = element.name;
-		bread.innerText = element.bread;
+		namePet.innerText = `Nome: ${element.name}`;
+		bread.innerText = `Espécie: ${element.bread}`;
 		if (element.available_for_adoption) {
 			adopt.innerText = "Adotável: Sim";
 		} else {
@@ -53,7 +55,8 @@ async function renderMyPets() {
 		});
 
 		divListItem.append(imgPet);
-		li.append(divListItem, namePet, bread, adopt, btnAdopt);
+		info.append(namePet, bread, adopt, btnAdopt);
+		li.append(divListItem, info);
 		ul.append(li);
 	});
 }
