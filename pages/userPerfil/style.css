@@ -60,7 +60,7 @@
 }
 
 .modal-container {
-	/* display: none; */
+	display: none;
 	place-items: center;
 	background: rgba(70, 35, 167, 0.13);
 	height: 100vh;
