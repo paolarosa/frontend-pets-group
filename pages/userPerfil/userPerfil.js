@@ -17,101 +17,49 @@ function logout() {
 }
 logout();
 
-async function renderProfileInfo() {
-
-    const user = await renderMyProfile()
-    const sectionProfile = document.querySelector(".profile-section")
-    const divHeroBg = document.createElement("div")
-    const divProfileImg = document.createElement("div")
-    const imgBg = document.createElement("img")
-    const divContainer = document.createElement("div")
-    const divProfileContainer = document.createElement("div")
-    const nameUser = document.createElement("h2")
-    const email = document.createElement("p")
-    const divProfileBtns = document.createElement("div")
-    const btnUpdate = document.createElement("button")
-    const btnDelete = document.createElement("button")
-
-    divHeroBg.classList.add("hero-bg")
-    divProfileImg.classList.add("profile-image")
-    divContainer.classList.add("container")
-    divProfileContainer.classList.add("profile-container")
-    email.id = "email"
-    divProfileBtns.classList.add("profile-buttons")
-    btnUpdate.classList.add("btn", "purple")
-    btnUpdate.id = "updateInfo"
-    btnDelete.classList.add("btn", "alert")
-    btnDelete.id = "deleteAccount"
-
- 
-    imgBg.src = user.avatar_url
-    nameUser.innerText = user.name
-    email.innerText = user.email
-    btnUpdate.innerText = "Atualizar informações"
-    btnDelete.innerText = "Deletar conta"
-    btnUpdate.setAttribute("data-modal", "update-modal")
-    btnDelete.setAttribute("data-modal", "delete-modal")
-
-    btnUpdate.addEventListener("click", () => {
-        modal()
-    })
-
-    btnDelete.addEventListener("click", () => {
-        modal()
-    })
-
-    divProfileImg.append(imgBg)
-    divHeroBg.append(divProfileImg)
-    divProfileBtns.append(btnUpdate, btnDelete)
-    divProfileContainer.append(nameUser, email, divProfileBtns)
-    divContainer.append(divProfileContainer)
-    sectionProfile.append(divHeroBg, divContainer)
-
-} renderProfileInfo()
-
 async function renderMyPets() {
-    const pets = await myPets()
-    const ul = document.querySelector("#petsList")
-    pets.forEach((element) => {
-        const li = document.createElement("li")
-        const divListItem = document.createElement("div")
-        const imgPet = document.createElement("img")
-        const namePet = document.createElement("h3")
-        const bread = document.createElement("p")
-        const adopt = document.createElement("p")
-        const btnAdopt = document.createElement("button")
+	const pets = await myPets();
+	const ul = document.querySelector("#petsList");
+	pets.forEach((element) => {
+		const li = document.createElement("li");
+		const divListItem = document.createElement("div");
+		const imgPet = document.createElement("img");
+		const namePet = document.createElement("h3");
+		const bread = document.createElement("p");
+		const adopt = document.createElement("p");
+		const btnAdopt = document.createElement("button");
 
-        li.classList.add("pet-list")
-        divListItem.classList.add("item-image")
-        namePet.classList.add("item")
-        bread.classList.add("item")
-        adopt.classList.add("item")
-        btnAdopt.classList.add("btn", "purple", "att")
+		li.classList.add("pet-list");
+		divListItem.classList.add("item-image");
+		namePet.classList.add("item");
+		bread.classList.add("item");
+		adopt.classList.add("item");
+		btnAdopt.classList.add("btn", "purple", "att");
 
+		imgPet.src = element.avatar_url;
+		namePet.innerText = element.name;
+		bread.innerText = element.bread;
+		if (element.available_for_adoption) {
+			adopt.innerText = "Adotável: Sim";
+		} else {
+			adopt.innerText = "Adotável: Não";
+		}
+		btnAdopt.innerText = "Atualizar";
 
-        imgPet.src = element.avatar_url
-        namePet.innerText = element.name
-        bread.innerText = element.bread
-        if (element.available_for_adoption) {
-            adopt.innerText = "Adotável: Sim"
-        } else {
-            adopt.innerText = "Adotável: Não"
-        }
-        btnAdopt.innerText = "Atualizar"
+		btnAdopt.setAttribute("data-modal", "update-pet");
 
-        btnAdopt.setAttribute("data-modal", "update-pet")
+		btnAdopt.addEventListener("click", () => {
+			modal();
+		});
 
-        btnAdopt.addEventListener("click", () => {
-            modal()
-        })
+		divListItem.append(imgPet);
+		li.append(divListItem, namePet, bread, adopt, btnAdopt);
+		ul.append(li);
+	});
+}
+renderMyPets();
 
-        divListItem.append(imgPet)
-        li.append(divListItem, namePet, bread, adopt, btnAdopt)
-        ul.append(li)
-
-    });
-} renderMyPets()
-
+async function renderProfileInfo() {
 	const user = await renderMyProfile();
 	const sectionProfile = document.querySelector(".profile-section");
 	const divHeroBg = document.createElement("div");
@@ -154,49 +102,6 @@ async function renderMyPets() {
 }
 renderProfileInfo();
 
-async function renderMyPets() {
-	const pets = await myPets();
-	const ul = document.querySelector("#petsList");
-	pets.forEach((element) => {
-		const li = document.createElement("li");
-		const divListItem = document.createElement("div");
-		const imgPet = document.createElement("img");
-		const namePet = document.createElement("h3");
-		const bread = document.createElement("p");
-		const adopt = document.createElement("p");
-		const btnAdopt = document.createElement("button");
-
-		li.classList.add("pet-list");
-		divListItem.classList.add("item-image");
-		namePet.classList.add("item");
-		bread.classList.add("item");
-		adopt.classList.add("item");
-		btnAdopt.classList.add("btn", "purple", "att");
-
-		imgPet.src = element.avatar_url;
-		namePet.innerText = element.name;
-		bread.innerText = element.bread;
-		if (element.available_for_adoption) {
-			adopt.innerText = "Adotável: Sim";
-		} else {
-			adopt.innerText = "Adotável: Não";
-		}
-		btnAdopt.innerText = "Atualizar";
-
-		btnAdopt.setAttribute("data-modal", "updatePetInfo-modal");
-
-		btnAdopt.addEventListener("click", () => {
-			modal();
-		});
-
-		divListItem.append(imgPet);
-		li.append(divListItem, namePet, bread, adopt, btnAdopt);
-		ul.append(li);
-	});
-}
-renderMyPets();
-
-
 function deleteProfileUser() {
 	const btnNoDelete = document.querySelector("#noDelete");
 	const btnDelete = document.querySelector("#deleteAccount");
@@ -214,30 +119,11 @@ function deleteProfileUser() {
 deleteProfileUser();
 
 async function updatePetInfo() {
-
-    const pets = await myPets()
-    const btn = document.querySelector("#button-att")
-    const input = document.querySelector("#inputPet")
-    pets.forEach((element) => {
-        btn.addEventListener("click", async (event) => {
-            const edit = {
-                name: element.name,
-                bread: element.bread,
-                species: element.species,
-                avatar_url: input.value
-            } 
-            await requestUpdatePetInfo(edit,element.id)
-            window.location.replace("/pages/userPerfil/index.html")  
-        })
-    });
-} updatePetInfo()
-
 	const pets = await myPets();
-	const form = document.querySelector("#formPet");
-	const input = document.querySelector("#avatar_url");
+	const btn = document.querySelector("#button-att");
+	const input = document.querySelector("#inputPet");
 	pets.forEach((element) => {
-		form.addEventListener("submit", async (event) => {
-			event.preventDefault();
+		btn.addEventListener("click", async (event) => {
 			const edit = {
 				name: element.name,
 				bread: element.bread,
@@ -245,9 +131,8 @@ async function updatePetInfo() {
 				avatar_url: input.value,
 			};
 			await requestUpdatePetInfo(edit, element.id);
-			console.log(element);
+			window.location.replace("/pages/userPerfil/index.html");
 		});
 	});
 }
 updatePetInfo();
-
