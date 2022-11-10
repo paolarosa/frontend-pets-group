@@ -164,7 +164,7 @@ async function deleteProfileUser() {
 
 	btnDelete.addEventListener("click", async () => {
 		await deleteProfile();
-		window.location.reload();
+		window.location.replace("/index.html");
 	});
 }
 deleteProfileUser();
