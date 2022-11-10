@@ -14,10 +14,18 @@ removeLocalStorage();
 async function renderAllpets() {
 	const ul = document.getElementById("ulPets");
 	const array = await allPets();
+	const filteredArray = array.filter(
+		(item) => item.available_for_adoption === true
+	);
 
-	const pets = array
-		.filter((item) => item.available_for_adoption === true)
-		.slice(0, 15);
+	const pets = filteredArray
+		.map((i) => i.name)
+		.map((name) => {
+			return filteredArray.find((i) => i.name === name);
+		})
+		.slice(3, 14);
+
+	console.log(pets);
 
 	pets.forEach((element) => {
 		if (element.available_for_adoption) {
