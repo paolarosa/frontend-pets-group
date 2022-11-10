@@ -1,3 +1,4 @@
+import { toast } from "../pages/login/login.js";
 import { toastRegister } from "../pages/registro/registro.js";
 import { getLocalStorage } from "./getLS.js";
 
