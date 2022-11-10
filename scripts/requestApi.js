@@ -34,7 +34,9 @@ async function login(email, password) {
 	)
 		.then((response) => response.json())
 		.then((response) => {
-			if (!response.message) {
+			console.log(response)
+			console.log(response.message)
+		 if (!response.message) {
 				localStorage.setItem("@KenzieCompany", JSON.stringify(response.token));
 				window.location.replace("../homeUser/index.html");
 			} else {
@@ -42,7 +44,7 @@ async function login(email, password) {
 				setTimeout(() => {
 					window.location.reload();
 				}, 3000);
-			}
+			}  
 		});
 	return responseJSON;
 }
