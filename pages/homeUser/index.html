@@ -28,8 +28,7 @@
 
     <div class="container">
         <main id="sectionPetView">
-            <h1 id="adoptTitle">Adote uma uma fofura <span> <img src="../../src/imgs/sentiment_satisfied.png"
-                        alt=""></span>
+            <h1 id="adoptTitle">Adote uma fofura <span> <img src="../../src/imgs/sentiment_satisfied.png" alt=""></span>
             </h1>
             <ul id="ulPets"></ul>
 
@@ -39,6 +38,20 @@
     <footer>
         <p>KenziePets | Todos os Direitos Reservados</p>
     </footer>
+
+    <div id="adopt-pet" class="modal-container">
+        <div class="modal">
+            <div class="modal-header">
+                <button class="close">X</button>
+            </div>
+            <div class="modal-body">
+                <h3>Deseja mesmo adotar esse pet?</h3>
+                <button class="btn purple" id="adotar">Quero adotar !</button>
+                <button class="btn alert close">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
     <script type="module" src="/pages/homeUser/index.js"></script>
     <script type="module" src="../../scripts/scripts.js"></script>
 </body>

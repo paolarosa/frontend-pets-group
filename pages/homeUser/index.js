@@ -1,17 +1,24 @@
+import { modal } from "../../scripts/modal.js";
 import { adoptPet, allPets } from "../../scripts/requestApi.js";
 import { verifyPermissionAdmin } from "../../scripts/verifyPermission.js";
-verifyPermissionAdmin()
+verifyPermissionAdmin();
 
 function removeLocalStorage() {
-	const btnLoggout = document.querySelector("#btnLoggout")
+	const btnLoggout = document.querySelector("#btnLoggout");
 	btnLoggout.addEventListener("click", () => {
-		localStorage.removeItem("@KenzieCompany")
-	})
-} removeLocalStorage()
+		localStorage.removeItem("@KenzieCompany");
+	});
+}
+removeLocalStorage();
 
 async function renderAllpets() {
 	const ul = document.getElementById("ulPets");
-	const pets = await allPets();
+	const array = await allPets();
+
+	const pets = array
+		.filter((item) => item.available_for_adoption === true)
+		.slice(0, 15);
+
 	pets.forEach((element) => {
 		if (element.available_for_adoption) {
 			const li = document.createElement("li");
@@ -23,12 +30,14 @@ async function renderAllpets() {
 			const btn = document.createElement("button");
 
 			li.classList.add("liPets");
+			li.id = element.id;
 			imgPet.classList.add("imgPets");
 			divPet.classList.add("divPet");
 			namePet.classList.add("namePets");
 			petRace.classList.add("race");
 			petSpecies.classList.add("species");
 			btn.classList.add("btnAdopt");
+			btn.setAttribute("data-modal", "adopt-pet");
 
 			imgPet.src = element.avatar_url;
 			namePet.innerText = element.name;
@@ -36,15 +45,27 @@ async function renderAllpets() {
 			petSpecies.innerText = element.species;
 			btn.innerText = "Me adota ?";
 
-			btn.addEventListener("click", () => {
-				const adop = { pet_id: element.id }
-				adoptPet(adop)
-			})
-
 			divPet.append(namePet, petRace);
 			li.append(imgPet, divPet, petSpecies, btn);
 			ul.append(li);
 		}
 	});
+
+	const adoptModal = document.getElementById("adopt-pet");
+	const adotarBtn = adoptModal.querySelector("#adotar");
+	const buttons = document.querySelectorAll(".liPets button");
+
+	buttons.forEach((btn) => {
+		btn.addEventListener("click", ({ target }) => {
+			const adop = { pet_id: target.parentElement.id };
+
+			adotarBtn.addEventListener("click", () => {
+				adoptPet(adop);
+				window.location.reload();
+			});
+		});
+	});
+
+	modal();
 }
 renderAllpets();
