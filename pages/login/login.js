@@ -27,6 +27,9 @@ export function toast(actualResponse) {
     if (actualResponse.message == "please inform a valid email format") {
         message.innerText = "Senha ou e-mail incorretos!"
     }
+    if (actualResponse.message == "Email not found") {
+        message.innerText = "Conta inexistente!"
+    }
     divReturn.appendChild(message)
     divReturn.classList.remove("hidden")
 }
