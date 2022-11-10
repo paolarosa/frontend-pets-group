@@ -36,15 +36,15 @@ async function login(email, password) {
 		.then((response) => {
 			console.log(response)
 			console.log(response.message)
-		 if (!response.message) {
+		  if (!response.message) {
 				localStorage.setItem("@KenzieCompany", JSON.stringify(response.token));
-				window.location.replace("../homeUser/index.html");
+				/* window.location.replace("../homeUser/index.html"); */
 			} else {
 				toast(response);
-				setTimeout(() => {
+				/* setTimeout(() => {
 					window.location.reload();
-				}, 3000);
-			}  
+				}, 3000); */
+			}   
 		});
 	return responseJSON;
 }

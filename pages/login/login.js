@@ -18,7 +18,7 @@ export function toast(actualResponse) {
     const divReturn = document.querySelector(".div-return")
     const message = document.createElement("p")
 
-    if (actualResponse.message == "password is required") {
+    if (actualResponse.message == "password is required" ||actualResponse.message == "Please verify the informed password and try again") {
         message.innerText = "Digite uma senha válida!"
     }
     if (actualResponse.message == "email is required") {
