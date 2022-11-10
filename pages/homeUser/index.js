@@ -25,7 +25,6 @@ async function renderAllpets() {
 		})
 		.slice(3, 14);
 
-	console.log(pets);
 
 	pets.forEach((element) => {
 		if (element.available_for_adoption) {
@@ -69,7 +68,10 @@ async function renderAllpets() {
 
 			adotarBtn.addEventListener("click", () => {
 				adoptPet(adop);
-				window.location.reload();
+				setTimeout(()=>{
+					window.location.reload();
+
+				},1500)
 			});
 		});
 	});
